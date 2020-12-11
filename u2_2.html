@@ -7,14 +7,29 @@
 body{
 	margin: 0;
 	font-size: 30px;
-	background-color: #EFEFEF;
+    background-color: #EFEFEF;
 }
-		
-.main > p{	
-	text-align:center;
-	padding-top:30vh;
-	padding-bottom:30vh;
-	font-size: 30px;
+h1 {
+ font-size: 30px;
+ }
+ 
+.outer{
+ height: 50vh;
+ margin-right: 50%;
+ border: 3px solid black;
+ padding: 1em;
+}
+
+.campusBild{
+ float:left;
+ width: 100%;
+ height: 100%;
+}
+
+
+
+input[type=checkbox]:checked ~ .outer > img{
+opacity : 0;
 }
 </style>
 </head>
@@ -55,7 +70,7 @@ body{
 <div class="dropdown">
   <button class="dropbtn">U5</button>
   <div class="dropdown-content">
-    <a href="u5_1.html">Klasse fÃ¼r Vorrangrelationen</a>
+    <a href="u5_1.html">Klasse für Vorrangrelationen</a>
     <a href="u5_2.html">Topologische Iterierbarkeit</a>
     <a href="u5_3.html">Topologischer Generator</a>
 	<a href="u5_4.html">Proxy</a>
@@ -111,12 +126,19 @@ body{
 
 
 <div class="main">
-		
-		<p>Willkommen auf meiner Seite!</p>
+<h1> Übung 2.2 </h1>
+
+
+<input id="bildCheck" type="checkbox">
+<label> hide and show via checkbox </label>
+
+<div class="outer">
+    <img class =campusBild src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Hochschule_Bonn-Rhein-Sieg_Wolfgang_G%C3%B6ddertz_Induktion.jpg" alt="H-BRS Campus">
 </div>
-</div>		<div class="footer">
+</div>	
+<div class="footer">
 	<p> Semesterprojekt Web-Engineering WS20/21</p>
     <p> von Marcel Blasius </p>
-<div>
+  </div>
   </body>
 </html>
