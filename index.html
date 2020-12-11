@@ -1,72 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
-</head>
-
 <style>
-
 body{
-	margin: 0;
-    display: grid;
-    grid-template-rows: 15vh 70vh 15vh
-}
-.header{
-	padding-top: 1vh;
-	text-align: center;
-    background-color: black;
-    color: white;
+	margin:0;
+    padding:0;
 }
 
-.footer{
-	background-color:black;
+.header { 
+			grid-row-start: 1; 
+            grid-column: 1 / 3;
+            text-align: center;
+            color: white;
+            background-color: black;
+            padding-bottom: 1vh;
+            border-bottom: 1vh solid orange;
+       	}
 
+.Main { 
+			grid-row-start: 2; grid-column: 1 / 3;
+			display:grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(6, 1fr);
+            text-align: center;
+            line-height: 12vh;
+            background-color: #EFEFEF;
+		
+		}
+.Main > .rightMain {
+			display:grid;
+            grid-row: 1;
+            grid-column 1;
+		}
+        
+.Main > .leftMain {
+			grid-column: 1;
+            grid-row: 1;
+			display:grid;
+            }
+            
+.footer { grid-row-start: 3; 
+		  grid-column: 1/3;
+          text-align: center;
+          color: white;
+          background-color: black;
+          line-height: 10vh;
+          border-top: 1vh solid orange;
+          }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 17vh 72vh 11vh;
 }
 
-.main{
-	padding-top: 2vh;
-	background-color: #EFEFEFEF;
+.grid-container > div {
+  font-size: 25px;
+  margin:0;
 }
-.main .grid{
-	display:grid;
-    grid-template-columns: 50% 50%;
-}
-.main .grid .gridleft{
-	grid-columns:1;
-    text-align: center;
-}
-.main .grid .gridright{
-	grid-columns:2;
-    text-align: center;
-}
-
 
 </style>
-
+</head>
 <body>
-<div class=header>
-<h1 style="margin:0"> Semesterprojekt 2020</h1>
-<h2> Marcel Blasius</h2>
+
+
+<div class="grid-container">
+  <div class="header">
+  	<p> Semesterprojekt 2020 </p>
+    <p> Marcel Blasius </p>
+  
+  </div>
+  <div class="Main">
+  <div class="leftMain">
+  		<a href="HTML WireFrame Uebung1"> Inventors of the Web </a>
+        <a href="JS Uebung3"> Responsive CSS</a>
+        <a href="ecmascript"> ECMAScript </a>
+        <a> Abgabe 7 </a>
+        <a> Abgabe 9 </a>
+        <a> Abgabe 11 </a>
+  </div>
+  <div class="rightMain">
+  		<a href="Form Uebung 2"> Survey Form </a>
+        <a href="javascript Uebung 4"> JavaScript </a>
+        <a href="functional"> Functional </a>
+        <a> Abgabe 8 </a>
+        <a> Abgabe 10 </a>
+        <a> <br></a>
+        
+  </div>
+  </div>  
+  <div class="footer">Footer</div>
 </div>
-
-<div class=main>
-<div class=grid>
-<div class=gridleft>
-    <a> Link Abgabe 1 </a> 
-</div>
-
-<div class=gridright>
-	<a> Link Abgabe 2 </a>
-</div>
-</div>
-
-</div>
-
-<div class=footer>
-
-</div>
-
-
 
 </body>
 </html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<script>
+const identity_function = x => x;
+const addf = x => y => x + y;
+const add = ( x, y ) => x + y;
+const applyf = x => y => z => x(y,z);
+const mul = (x,y) => x * y;
+
+function curry(fun, a) {
+	return b => {
+	  return fun(a,b);
+ }
+}
+const add3 = curry(add, 3);
+const inc = x => addf(x)(1);
+const incWithAddf = x => addf(x)(1);
+const incWithApplyf = x=> applyf(add)(x)(1);
+const incWithCurry = x=> curry(add, x)(1);
+
+
+
+function methodize(fun){
+	return x => self + x;
+}
+
+const twice = f => x => f(x,x);
+const double = twice(add);
+const square = twice(mul);
+
+const composeu = (f, g) => x => {
+	x = f(x);
+	return g(x);
+};
+
+const composeb = (f, g) => (x, y, z) => {
+	const ergf = f(x,y);
+	return g(ergf, z);
+};
+
+
+function once(fun){
+	let count = false;
+
+	return function(a, b){
+		if(count) return ("ERROR")
+		count = true;
+		return fun(a,b);
+	}
+};
+
+function counterf(number){
+	
+	return {
+	number: number,
+	inc: () => ++number,
+	dec: () => --number
+	}
+};
+function revocable(fun){
+    let revoked = false;
+
+    this.invoke = x=> {
+        if(revoked) return "ERROR";
+        return fun(x);
+    };
+
+    this.revoke = () => revoked = true;
+};
+
+function vector(){
+    const array = [];
+
+    this.get = x => {return array[x]};
+
+    this.append = x => array.push(x);
+
+    this.store = (index, value) => array[index] = value;
+};
+
+function methodize(fun){
+    return function(y){
+        return fun(this, y);
+    }
+}
+
+let add_once = once(add);
+let add_once2 = once(add);
+let counterTen = counterf(10);
+
+console.log("identity_function(8): " + identity_function(8));
+console.log("addf(5)(3): " + addf(5)(3));
+console.log("applyf(mul)(5)(3): " + applyf(mul)(5)(3));
+console.log("curry(add, 3)(4): " +  add3(4));
+console.log("curry(mul, 5)(6): " + curry(mul, 5)(6));
+console.log("incWithAddf(5): " + incWithAddf(5));
+console.log("incWithApplyf(5): " + incWithApplyf(5));
+console.log("incWithCurry(5): " + incWithCurry(5));
+console.log("double(11): " + double(11));
+console.log("square(11): " + square(11));
+console.log("composeu(double,square)(3): " + composeu(double,square)(3));
+console.log("composeb(add, mul)(2, 3, 5): " + composeb(add, mul)(2, 3, 5));
+console.log("add_once(3, 4) erster Aufruf: " + add_once(3, 4));
+console.log("add_once(3, 4) zweiter Aufruf: " + add_once(3, 4));
+console.log("counterTen.inc: " + counterTen.inc());
+console.log("counterTen.dec: " + counterTen.dec());
+let revocableVar = new revocable(x=> x);
+console.log("revocableVar.invoke(7): " +revocableVar.invoke(7));
+revocableVar.revoke();
+console.log("revocableVar.revoke()");
+console.log("revocableVar.invoke(7): " +revocableVar.invoke(7));
+let my_vector = new vector();
+my_vector.append(1);
+console.log("my_vector at position 0 after append(1): " + my_vector.get(0));
+my_vector.store(0,2);
+console.log("my_vector position 0 after store(0, 2): " + my_vector.get(0));
+console.log("my_vector.array: " + my_vector.array);
+
+Number.prototype.add = methodize((x,y) => x + y);
+console.log("(3).add(4): " + (3).add(4));
+
+</script>
+</html>
