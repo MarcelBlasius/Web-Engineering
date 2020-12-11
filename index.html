@@ -1,96 +1,171 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{
-	margin:0;
-    padding:0;
+	margin: 0;
+	display: grid;
+	font-size: 30px;
+	background-color: black;
+}
+.dropbtn {
+  background-color: black;
+  color: white;
+  padding: 2vh 2em 2vh 2em;
+  font-size: 20px;
+  border: none;
 }
 
-.header { 
-			grid-row-start: 1; 
-            grid-column: 1 / 3;
-            text-align: center;
-            color: white;
-            background-color: black;
-            padding-bottom: 1vh;
-            border-bottom: 1vh solid orange;
-       	}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-.Main { 
-			grid-row-start: 2; grid-column: 1 / 3;
-			display:grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: repeat(6, 1fr);
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #EFEFEF;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  font-size: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: orange; color: black}
+
+.header{
+	background-color:black;
+    text-align:center;
+	border-bottom: 2vh solid orange;
+
+}
+.main { 	
             text-align: center;
-            line-height: 12vh;
+			line-height: 70vh;
             background-color: #EFEFEF;
+			
+			min-height: 70vh;
 		
 		}
-.Main > .rightMain {
-			display:grid;
-            grid-row: 1;
-            grid-column 1;
-		}
-        
-.Main > .leftMain {
-			grid-column: 1;
-            grid-row: 1;
-			display:grid;
-            }
-            
-.footer { grid-row-start: 3; 
-		  grid-column: 1/3;
+
+.footer {
           text-align: center;
           color: white;
           background-color: black;
-          line-height: 10vh;
           border-top: 1vh solid orange;
           }
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 17vh 72vh 11vh;
-}
-
-.grid-container > div {
-  font-size: 25px;
-  margin:0;
-}
-
 </style>
 </head>
 <body>
 
-
-<div class="grid-container">
-  <div class="header">
-  	<p> Semesterprojekt 2020 </p>
-    <p> Marcel Blasius </p>
-  
+<div class="header">
+<div class="dropdown">
+  <button class="dropbtn">U1</button>
+  <div class="dropdown-content">
+    <a href="u1_1">Inventors of the Web</a>
   </div>
-  <div class="Main">
-  <div class="leftMain">
-  		<a href="HTML WireFrame Uebung1"> Inventors of the Web </a>
-        <a href="JS Uebung3"> Responsive CSS</a>
-        <a href="ecmascript"> ECMAScript </a>
-        <a> Abgabe 7 </a>
-        <a> Abgabe 9 </a>
-        <a> Abgabe 11 </a>
-  </div>
-  <div class="rightMain">
-  		<a href="Form Uebung 2"> Survey Form </a>
-        <a href="javascript Uebung 4"> JavaScript </a>
-        <a href="functional"> Functional </a>
-        <a> Abgabe 8 </a>
-        <a> Abgabe 10 </a>
-        <a> <br></a>
-        
-  </div>
-  </div>  
-  <div class="footer">Footer</div>
 </div>
 
+<div class="dropdown">
+  <button class="dropbtn">U2</button>
+  <div class="dropdown-content">
+    <a href="u2_2_1">Sticky Ueberschrift</a>
+    <a href="u2_2_2">Image Checkbox</a>
+    <a href="u2_3">Survey Form</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U3</button>
+  <div class="dropdown-content">
+    <a href="u3_1">Flexbox Desktop-First</a>
+    <a href="u3_2">Grid Mobile-First</a>
+    <a href="u3_3">Responsive mit Grid</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U4</button>
+  <div class="dropdown-content">
+    <a href="u4_1">Funktionen</a>
+    <a href="u4_2">Objekte</a>
+    <a href="u4_3">Fibonacci</a>
+	<a href="u4_4">Topsort</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U5</button>
+  <div class="dropdown-content">
+    <a href="u5_1">Klasse für Vorrangrelationen</a>
+    <a href="u5_2">Topologische Iterierbarkeit</a>
+    <a href="u5_3">Topologischer Generator</a>
+	<a href="u5_4">Proxy</a>
+	<a href="u5_5">DeepCopy</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U6</button>
+  <div class="dropdown-content">
+    <a href="u6_1">Funktionen in JavaScript</a>
+    <a href="u6_2">Textanalyse mit filter-map-reduce</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U7</button>
+  <div class="dropdown-content">
+    <a href="#">Link 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div><div class="dropdown">
+  <button class="dropbtn">U8</button>
+  <div class="dropdown-content">
+    <a href="#">Link 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div><div class="dropdown">
+  <button class="dropbtn">U9</button>
+  <div class="dropdown-content">
+    <a href="#">Link 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U10</button>
+  <div class="dropdown-content">
+    <a href="#">Link 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U11</button>
+  <div class="dropdown-content">
+    <a href="#">Link 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+</div>
+
+
+
+<div class="main">
+  		Willkommen auf meiner Seite!</div>
+  <div class="footer">
+	<p style="padding-top: 12px"> Semesterprojekt Web-Enginnering WS20/21</p>
+    <p style="padding-bottom: 12px"> von Marcel Blasius </p>
+  </div>
 </body>
 </html>
