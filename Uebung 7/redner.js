@@ -2,7 +2,7 @@ const list = document.getElementById("list");
 const input = document.getElementById("InputName");
 
 input.addEventListener("keyup", event =>{
-    if(event.keyCode ==13){
+    if(event.key == "Enter"){
         document.getElementById("hinzufuegenButton").click();
     }
 });
