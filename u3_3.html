@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="indexStyle.css" rel="stylesheet" type="text/css">
+<style>
+body{
+	margin: 0;
+	font-size: 30px;
+    background-color: #EFEFEF;
+}
+.main{
+    font-size: 12.5px;
+    font-family: 'Roboto', sans-serif;
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 7vh 73vh 20vh;
+
+}
+.innerheader {
+  text-align: center;
+  vertical-align: middle;
+  background-color: black;
+  color: #EFEFEF;
+  grid-row-start: 1;
+  
+}
+.innerheader ul, .innerheader ul li {
+   display: inline-block;
+   list-style-type: none;
+}
+.innerheader ul li {
+  padding: 1em 2em;
+}
+.innermain {
+  background-color: #EFEFEF;
+  text-align: center;
+  grid-row-start: 2;
+}
+.innermain h1{
+  font-size: 3vw;
+  padding-top: 0.5em;
+  margin:0;
+  word-spacing: 0.5em;
+  }
+  
+.innermain p{
+  font-weight: 550;
+}
+.innermain .grid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-template-rows: 100%;
+}
+.innermain .grid div {
+  padding: 20px;
+}
+.innermain .gridright p{
+  padding-bottom: 1em;
+}
+.innermain img {
+  max-width: 60%;
+  max-height: 55vh;
+  border: 1px solid black;
+  border-radius: 5px;
+  grid-row-start:1;
+}
+.innerfooter {
+  padding: 25px 0 15px 0;
+  text-align: center;
+  background-color: black;
+  color: #EFEFEF;
+  grid-row-start: 3;
+}
+.button {
+  display: inline-block;
+  width: 60%;
+  background-color: #ff751a;
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 7.5px 0;
+  margin-bottom: 1em;
+}
+#firstRightP{
+	padding-top: 2vh;
+}
+@media all and (max-width: 600px) {
+.main{
+	margin: 0;
+    font-size: 12.5px;
+    font-family: 'Roboto', sans-serif;
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20vh 60vh 20vh;
+
+}
+.innermain .gridleft {
+  grid-row-start: 1;
+}
+.innermain .gridright{
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+
+#firstRightP{
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.innerheader ul li {
+  padding: 1em 5em;
+  margin-bottom: 0px;
+}
+}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="dropdown">
+  <button class="dropbtn">U1</button>
+  <div class="dropdown-content">
+    <a href="u1_1.html">Inventors of the Web</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">U2</button>
+  <div class="dropdown-content">
+    <a href="u2_1.html">Sticky Ueberschrift</a>
+    <a href="u2_2.html">Image Checkbox</a>
+    <a href="u2_3.html">Survey Form</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U3</button>
+  <div class="dropdown-content">
+    <a href="u3_1.html">Flexbox Desktop-First</a>
+    <a href="u3_2.html">Grid Mobile-First</a>
+    <a href="u3_3.html">Responsive mit Grid</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U4</button>
+  <div class="dropdown-content">
+    <a href="u4_1.html">Funktionen</a>
+    <a href="u4_2.html">Objekte</a>
+    <a href="u4_3.html">Fibonacci</a>
+	<a href="u4_4.html">Topsort</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U5</button>
+  <div class="dropdown-content">
+    <a href="u5_1.html">Klasse für Vorrangrelationen</a>
+    <a href="u5_2.html">Topologische Iterierbarkeit</a>
+    <a href="u5_3.html">Topologischer Generator</a>
+	<a href="u5_4.html">Proxy</a>
+	<a href="u5_5.html">DeepCopy</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U6</button>
+  <div class="dropdown-content">
+    <a href="u6_1">Funktionen in JavaScript</a>
+    <a href="u6_2">Textanalyse mit filter-map-reduce</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U7</button>
+  <div class="dropdown-content">
+    <a href="#">Link 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div><div class="dropdown">
+  <button class="dropbtn">U8</button>
+  <div class="dropdown-content">
+    <a href="#">Link 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div><div class="dropdown">
+  <button class="dropbtn">U9</button>
+  <div class="dropdown-content">
+    <a href="#">Link 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U10</button>
+  <div class="dropdown-content">
+    <a href="#">Link 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">U11</button>
+  <div class="dropdown-content">
+    <a href="#">Link 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+</div>
+
+
+<div class="main">
+    <div class=innerheader>
+        <ul style="display:inline-block;">
+          <li><a> the book series</a></li>
+          <li><a> Testimonials </a></li>
+          <li><a> The Author </a></li>
+          <li><a> Free resources </a></li>
+        </ul>
+    </div>
+    <div class="innermain">
+      <div> <h1>You dont know JavaScript</h1></div>
+      <div class="grid">
+        <div class="gridleft">
+          <img src="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" alt="JS Complete Series" />
+        </div>
+        <div class="gridright">
+            <br>
+            <br>
+            <p id="firstRightP">Don't just drift through Javascript.</p>
+            <p>Understand how Javascript works</p>
+            <p>Start your journey through the bumpy side of Javascript</p>
+            <a class="button">ORDER YOUR COPY NOW</a>
+        
+        </div>
+      </div>
+    </div>
+    <div class=innerfooter>
+      <p>the first ebook in the book series is absolutely free.</p>
+      <a class="button">FIND OUT MORE ABOUT THIS OFFER</a>
+    </div>
+
+</div>
+<div class="footer">
+	<p style="padding-top: 12px"> Semesterprojekt Web-Engineering WS20/21</p>
+    <p style="padding-bottom: 12px"> von Marcel Blasius </p>
+  </div>
+  </body>
+</html>

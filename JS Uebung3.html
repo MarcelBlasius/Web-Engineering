@@ -15,7 +15,7 @@ body{
     grid-template-rows: 7vh 73vh 20vh;
 
 }
-.header {
+.innerheader {
   text-align: center;
   vertical-align: middle;
   background-color: black;
@@ -23,47 +23,47 @@ body{
   grid-row-start: 1;
   
 }
-.header ul, .header ul li {
+.innerheader ul, .innerheader ul li {
    display: inline-block;
    list-style-type: none;
 }
-.header ul li {
+.innerheader ul li {
   padding: 1em 2em;
 }
-.main {
+.innermain {
   background-color: #EFEFEF;
   text-align: center;
   grid-row-start: 2;
 }
-.main h1{
+.innermain h1{
   font-size: 3vw;
   padding-top: 0.5em;
   margin:0;
   word-spacing: 0.5em;
   }
   
-.main p{
+.innermain p{
   font-weight: 550;
 }
-.main .grid {
+.innermain .grid {
   display: grid;
   grid-template-columns: 45% 55%;
   grid-template-rows: 100%;
 }
-.main .grid div {
+.innermain .grid div {
   padding: 20px;
 }
-.main .gridright p{
+.innermain .gridright p{
   padding-bottom: 1em;
 }
-.main img {
+.innermain img {
   max-width: 60%;
   max-height: 55vh;
   border: 1px solid black;
   border-radius: 5px;
   grid-row-start:1;
 }
-.footer {
+.innerfooter {
   padding: 25px 0 15px 0;
   text-align: center;
   background-color: black;
@@ -92,10 +92,10 @@ body{
     grid-template-rows: 20vh 60vh 20vh;
 
 }
-.main .gridleft {
+.innermain .gridleft {
   grid-row-start: 1;
 }
-.main .gridright{
+.innermain .gridright{
   grid-column-start: 2;
   grid-row-start: 1;
 }
@@ -106,7 +106,7 @@ body{
   margin-top: 0;
 }
 
-.header ul li {
+.innerheader ul li {
   padding: 1em 5em;
   margin-bottom: 0px;
 }
@@ -117,7 +117,7 @@ body{
 </head>
 <body>
 
-<div class=header>
+<div class=innerheader>
 	<ul style="display:inline-block;">
       <li><a> the book series</a></li>
       <li><a> Testimonials </a></li>
@@ -125,7 +125,7 @@ body{
       <li><a> Free resources </a></li>
     </ul>
 </div>
-<div class="main">
+<div class="innermain">
   <div> <h1>You dont know JavaScript</h1></div>
   <div class="grid">
     <div class="gridleft">
@@ -142,7 +142,7 @@ body{
     </div>
   </div>
 </div>
-<div class=footer>
+<div class=innerfooter>
   <p>the first ebook in the book series is absolutely free.</p>
   <a class="button">FIND OUT MORE ABOUT THIS OFFER</a>
 </div>
