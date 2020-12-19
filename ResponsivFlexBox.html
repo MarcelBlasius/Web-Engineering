@@ -18,13 +18,13 @@ body{
     padding: 1em;
 }
 
-.head{
+.red{
 	background-color: red;
     width: 100%;
     height: var(--heightHead);
 }
 
-.main{
+.blue{
 	background-color: blue;
     width: 60%;
     height: calc(100vh - var(--heightHead));
@@ -49,7 +49,7 @@ body{
     	width: 20%;
     }
     
-    .main{
+    .blue{
     	width: 80%;
     }
     
@@ -61,7 +61,7 @@ body{
 }
 
 @media all and (max-width: 300px){
-	.main{
+	.blue{
     	width: 100%;
         order: 2;
     }
@@ -84,9 +84,9 @@ body{
 
 
 <body>
-<div class=head> </div>
+<div class=red> </div>
 <div class=leftSideBar> </div>
-<div class=main> </div>
+<div class=blue> </div>
 <div class=rightSideBar></div>
 
 
