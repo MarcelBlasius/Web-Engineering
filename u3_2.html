@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+<style>
+
+body{
+	display: grid;
+    box-sizing: border-box;
+    grid-template-columns: 100%;
+    grid-template-rows: 10vh 10vh 70vh 10vh;
+    margin: 0;
+    padding: 0;
+}
+
+.head{
+	background-color: red;
+    grid-row-start: 1;
+}
+
+.main{
+	background-color: blue;
+        grid-row-start: 3;
+   }
+
+.leftSideBar{
+	background-color: green;
+    grid-row-start: 2;
+}
+
+.rightSideBar{
+	background-color: purple;
+    grid-row-start: 4;
+
+}
+
+@media all and (min-width: 300px){
+	body{
+		display: grid;
+      	box-sizing: border-box;
+      	grid-template-columns: 25% 75%;
+   	 	grid-template-rows: 10vh 80vh 10vh;
+	}
+	.head{
+		background-color: red;
+    	grid-row-start: 1;
+        grid-column: 1 / span 2;
+	}
+
+	.main{
+		background-color: blue;
+        grid-row-start: 2;
+        grid-column-start: 2;
+   }
+
+	.leftSideBar{
+		background-color: green;
+        grid-row-start: 2;
+        grid-column-start: 1;
+	}
+
+	.rightSideBar{
+		background-color: purple;
+   		grid-row-start: 3;
+        grid-column: 1/span 2;
+
+	}
+}
+
+
+@media all and (min-width: 600px){
+	body{
+		display: grid;
+      	box-sizing: border-box;
+      	grid-template-columns: 20% 60% 20%;
+   	 	grid-template-rows: 25vh 75vh;
+	}
+	.head{
+		background-color: red;
+    	grid-row-start: 1;
+        grid-column: 1 / span 3;
+	}
+
+	.main{
+		background-color: blue;
+        grid-row-start: 2;
+        grid-column-start: 2;
+   }
+
+	.leftSideBar{
+		background-color: green;
+        grid-row-start: 2;
+        grid-column-start: 1;
+	}
+
+	.rightSideBar{
+		background-color: purple;
+   		grid-row-start: 2;
+        grid-column: 3;
+
+	}
+}
+
+
+
+</style>
+</head>
+
+
+<body>
+<div class=head></div>
+<div class=main></div>
+<div class=leftSideBar></div>
+<div class=rightSideBar></div>
+
+
+
+</body>
+</html>
