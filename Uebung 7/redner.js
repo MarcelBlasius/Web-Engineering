@@ -25,7 +25,7 @@ hinzufuegenButton.addEventListener("click", () =>{
     timerButton.value = "Start!";
     timerButton.className="timerButton";
     timerButton.type = "button";
-    timerButton.style.marg3inLeft = "1vw";
+    timerButton.style.marginLeft = "1vw";
     
     var timerVar;
     timerButton.addEventListener("click", () =>{
