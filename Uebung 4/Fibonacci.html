@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+function fibonacci(anzahl){
+	var tabelle =[];
+    for(i = 0; tabelle.length < anzahl; i++){
+    	tabelle.push(fibonacciHelper(i));
+    }
+    
+    return tabelle;
+}
+
+function fibonacciHelper(x){
+     fiboVonI = 0;
+     fiboVonIPlusEins = 1;
+     for(i = 0; i < x; i++){
+		tmp = fiboVonIPlusEins 
+		fiboVonIPlusEins += fiboVonI 
+		fiboVonI = tmp;
+	}
+return fiboVonI;
+}
+
+function getHighestFiboInInteger(fiboTabelle){
+	for(i = 0; i < fiboTabelle.length; i++){
+		if(fiboTabelle[i] > Number.MAX_SAFE_INTEGER){
+			return fiboTabelle[i-1];
+		}
+	}
+}
+function getHighestFiboInNumber(fiboTabelle){
+	for(i = 0; i < fiboTabelle.length; i++){
+		if(fiboTabelle[i] > Number.MAX_VALUE){
+			return fiboTabelle[i-1];
+		}
+	}
+}
+console.log(fibonacci(2000));
+
+</script>
+
+</body>
+</html>
