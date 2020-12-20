@@ -1,4 +1,9 @@
 
+body{
+	margin: 0;
+	font-size: 30px;
+    background-color: #EFEFEF;
+}
 .dropdown {
   position: relative;
   display: inline-block;
