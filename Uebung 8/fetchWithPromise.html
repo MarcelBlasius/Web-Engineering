@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+
+<script>
+
+Promise.all([
+  fetch('A.txt').then(x => x.text()),
+  fetch('B.txt').then(x => x.text())
+]).then(([aResp, bResp]) => {
+    arows = aResp.match(/[^\r\n]+/g);
+    brows = bResp.match(/[^\r\n]+/g);
+    if(arows.length === brows.length){
+        for(let i = 0; i < arows.length; i++){
+            document.body.appendChild(document.createTextNode(arows[i] + brows[i]));
+            document.body.appendChild(document.createElement("br"));
+        }
+    } else if (arows.length > brows.length){
+        for(let i = 0; i < arows.length; i++){
+            if(brows[i] !== undefined){
+                document.body.appendChild(document.createTextNode(arows[i] + brows[i]));
+            } else {
+                document.body.appendChild(document.createTextNode(arows[i]));
+            }
+            document.body.appendChild(document.createElement("br"));
+        }
+    } else {
+        for(let i = 0; i < brows.length; i++){
+            if(arows[i] !== undefined){
+                document.body.appendChild(document.createTextNode(arows[i] + brows[i]));
+            } else {
+                document.body.appendChild(document.createTextNode(brows[i]));
+            }
+            document.body.appendChild(document.createElement("br"));
+        }
+    }
+});
+
+
+</script>
+</body>
+
+</html>
