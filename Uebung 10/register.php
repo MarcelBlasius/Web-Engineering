@@ -7,7 +7,7 @@
         <input type="text" name="anzeigename">
         <br>
         Password:<br>
-        <input type="passwort" name="passwort">
+        <input type="password" name="passwort">
         <br>
         <br>
         <input type="submit" value="registrieren">
@@ -20,8 +20,7 @@
         $anzeigename = $_POST['anzeigename'];
         $passwort = $_POST['passwort'];
         $file = './raw_pwd.csv';
-        $new_line = $anzeigename . ',' . $passwort . "\n";
-
+        $new_line = hash("sha384", $anzeigename) . ',' . hash("sha384", $passwort) . "\n";
         if(file_put_contents($file, $new_line, FILE_APPEND | LOCK_EX)){
             echo "<script>alert('Erfolgreich registriert')</script>";
         }
