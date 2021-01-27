@@ -29,7 +29,7 @@ body{
 
 .footer{
   grid-row: 2;
-  grid-column: 1/4;
+  grid-column: 1/5;
   text-align: center;
   color: white;
   height: 19vh;
@@ -103,7 +103,7 @@ body{
   }
   .content{
     grid-row:2;
-    grid-column: 1/4;
+    grid-column: 1/5;
     min-height: 68vh;
   }
   .footer{
