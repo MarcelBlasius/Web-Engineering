@@ -15,13 +15,13 @@ body{
   background-color: black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:flex-start;
   align-content: center;
   flex-wrap: wrap;
   border-right: 2vh solid orange;
 }
 
-.content{
+.main{
   grid-row: 1;
   min-height: 80vh;
   grid-column: 3/4;
@@ -78,14 +78,14 @@ body{
   .header{
     grid-column: 1/2;
   }
-  .content{
+  .main{
     grid-column: 2/4;
   }
 
 
 }
 
-@media all and (min-width: 1070px){
+@media all and (min-width: 1200px){
   .header{
     grid-row: 1;
     grid-column: 1/5;
@@ -101,7 +101,7 @@ body{
     
 
   }
-  .content{
+  .main{
     grid-row:2;
     grid-column: 1/5;
     min-height: 68vh;

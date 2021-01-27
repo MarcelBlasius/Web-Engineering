@@ -4,10 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="indexStyle.css" rel="stylesheet" type="text/css">
 <style>
-body{
-	margin: 0;
-	font-size: 30px;
-    background-color: #EFEFEF;
+.main{
+  margin-left: 5vw;
+  margin-bottom: 5vh;
 }
 h1 {
  font-size: 30px;
@@ -15,7 +14,7 @@ h1 {
  
 .outer{
  height: 50vh;
- margin-right: 50%;
+ margin-right: 10vw;
  border: 3px solid black;
  padding: 1em;
 }
@@ -30,6 +29,15 @@ h1 {
 
 input[type=checkbox]:checked ~ .outer > img{
 opacity : 0;
+}
+
+@media all and (min-width: 1200px){
+  .outer{
+    height: 50vh;
+    margin-right: 50%;
+    border: 3px solid black;
+    padding: 1em;
+  }
 }
 </style>
 </head>
@@ -70,7 +78,7 @@ opacity : 0;
 <div class="dropdown">
   <button class="dropbtn">U5</button>
   <div class="dropdown-content">
-    <a href="u5_1.html">Klasse für Vorrangrelationen</a>
+    <a href="u5_1.html">Klasse fï¿½r Vorrangrelationen</a>
     <a href="u5_2.html">Topologische Iterierbarkeit</a>
     <a href="u5_3.html">Topologischer Generator</a>
 	<a href="u5_4.html">Proxy</a>
@@ -126,7 +134,7 @@ opacity : 0;
 
 
 <div class="main">
-<h1> Übung 2.2 </h1>
+<h1> Uebung 2.2 </h1>
 
 
 <input id="bildCheck" type="checkbox">
