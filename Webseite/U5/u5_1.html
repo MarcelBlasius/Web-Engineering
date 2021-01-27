@@ -9,47 +9,48 @@
 </head>
 <body>
 
-  <div class="header">
+    
+  <div class=header> 
     <div class="dropdown">
       <button class="dropbtn">U1</button>
       <div class="dropdown-content">
-        <a href="../u1/u1_1.html">Inventors of the Web</a>
+        <a href="u1_1.html">Inventors of the Web</a>
       </div>
     </div>
     
     <div class="dropdown">
       <button class="dropbtn">U2</button>
       <div class="dropdown-content">
-        <a href="../u2/u2_1.html">Sticky Ueberschrift</a>
-        <a href="../u2/u2_2.html">Image Checkbox</a>
-        <a href="../u2/u2_3.html">Survey Form</a>
+        <a href="u2_1.html">Sticky Ueberschrift</a>
+        <a href="u2_2.html">Image Checkbox</a>
+        <a href="u2_3.html">Survey Form</a>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropbtn">U3</button>
       <div class="dropdown-content">
-        <a href="../u3/u3_1.html">Flexbox Desktop-First</a>
-        <a href="../u3/u3_2.html">Grid Mobile-First</a>
-        <a href="../u3/u3_3.html">Responsive mit Grid</a>
+        <a href="u3_1.html">Flexbox Desktop-First</a>
+        <a href="u3_2.html">Grid Mobile-First</a>
+        <a href="u3_3.html">Responsive mit Grid</a>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropbtn">U4</button>
       <div class="dropdown-content">
-        <a href="../u4/u4_1.html">Funktionen</a>
-        <a href="../u4/u4_2.html">Objekte</a>
-        <a href="../u4/u4_3.html">Fibonacci</a>
-      <a href="../u4/u4_4.html">Topsort</a>
+        <a href="u4_1.html">Funktionen</a>
+        <a href="u4_2.html">Objekte</a>
+        <a href="u4_3.html">Fibonacci</a>
+      <a href="u4_4.html">Topsort</a>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropbtn">U5</button>
       <div class="dropdown-content">
-        <a href="../u5/u5_1.html">Klasse f�r Vorrangrelationen</a>
-        <a href="../u5/u5_2.html">Topologische Iterierbarkeit</a>
-        <a href="../u5/u5_3.html">Topologischer Generator</a>
-      <a href="../u5/u5_4.html">Proxy</a>
-      <a href="../u5/u5_5.html">DeepCopy</a>
+        <a href="u5_1.html">Klasse f�r Vorrangrelationen</a>
+        <a href="u5_2.html">Topologische Iterierbarkeit</a>
+        <a href="u5_3.html">Topologischer Generator</a>
+      <a href="u5_4.html">Proxy</a>
+      <a href="u5_5.html">DeepCopy</a>
       </div>
     </div>
     <div class="dropdown">
@@ -66,14 +67,16 @@
         <a href="#">Link 2</a>
         <a href="#">Link 3</a>
       </div>
-    </div><div class="dropdown">
+    </div>
+    <div class="dropdown">
       <button class="dropbtn">U8</button>
       <div class="dropdown-content">
         <a href="#">Link 2</a>
         <a href="#">Link 2</a>
         <a href="#">Link 3</a>
       </div>
-    </div><div class="dropdown">
+    </div>
+    <div class="dropdown">
       <button class="dropbtn">U9</button>
       <div class="dropdown-content">
         <a href="#">Link 2</a>
@@ -89,18 +92,47 @@
         <a href="#">Link 3</a>
       </div>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">U11</button>
-      <div class="dropdown-content">
-        <a href="#">Link 2</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </div>
     </div>
 
     <div class=main> 
-      <p>Willkommen auf meiner Seite!</p>
+		<script>
+			class Vorrang {
+				constructor(abhaengigkeiten){
+					this._abhaengigkeiten = abhaengigkeiten;
+				}
+			
+				get abhaengigkeiten(){
+					return this._abhaengigkeiten;
+				}
+				get topologischeSortierung(){
+					return this._topologischeSortierung;		
+				}
+			
+				set topologischeSortierung(topsort){
+					this._topologischeSortierung = topsort;
+				}
+			}
+			
+			//test
+			
+			// :: Arrange ::
+			var undertest = new Vorrang([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]]);
+			var expected = [["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]];
+			
+			// :: Act ::
+			var actual = undertest.abhaengigkeiten;
+			
+			// :: Assert ::
+			console.assert(expected.length === actual.length, "ERROR! expected: " + expected + " actual: " + actual);
+			for(var i= 0; i < expected.length; i++){
+				console.assert(expected[i].length === actual[i].length);
+				for(var j=0; j < expected[i].length; j++){
+					console.assert(expected[i][j] === actual[i][j], "ERROR! expected: " + expected + " actual: " + actual);	
+				}
+			}
+			
+			
+			</script>
     </div>
     <div class="footer">
       <p> Semesterprojekt Web-Engineering WS20/21</p>

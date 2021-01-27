@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../styles/indexStyle.css" rel="stylesheet" type="text/css">
+<style>
+
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="dropdown">
+      <button class="dropbtn">U1</button>
+      <div class="dropdown-content">
+        <a href="../u1/u1_1.html">Inventors of the Web</a>
+      </div>
+    </div>
+    
+    <div class="dropdown">
+      <button class="dropbtn">U2</button>
+      <div class="dropdown-content">
+        <a href="../u2/u2_1.html">Sticky Ueberschrift</a>
+        <a href="../u2/u2_2.html">Image Checkbox</a>
+        <a href="../u2/u2_3.html">Survey Form</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">U3</button>
+      <div class="dropdown-content">
+        <a href="../u3/u3_1.html">Flexbox Desktop-First</a>
+        <a href="../u3/u3_2.html">Grid Mobile-First</a>
+        <a href="../u3/u3_3.html">Responsive mit Grid</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">U4</button>
+      <div class="dropdown-content">
+        <a href="../u4/u4_1.html">Funktionen</a>
+        <a href="../u4/u4_2.html">Objekte</a>
+        <a href="../u4/u4_3.html">Fibonacci</a>
+      <a href="../u4/u4_4.html">Topsort</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">U5</button>
+      <div class="dropdown-content">
+        <a href="../u5/u5_1.html">Klasse f�r Vorrangrelationen</a>
+        <a href="../u5/u5_2.html">Topologische Iterierbarkeit</a>
+        <a href="../u5/u5_3.html">Topologischer Generator</a>
+      <a href="../u5/u5_4.html">Proxy</a>
+      <a href="../u5/u5_5.html">DeepCopy</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">U6</button>
+      <div class="dropdown-content">
+        <a href="u6_1">Funktionen in JavaScript</a>
+        <a href="u6_2">Textanalyse mit filter-map-reduce</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">U7</button>
+      <div class="dropdown-content">
+        <a href="#">Link 2</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div><div class="dropdown">
+      <button class="dropbtn">U8</button>
+      <div class="dropdown-content">
+        <a href="#">Link 2</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div><div class="dropdown">
+      <button class="dropbtn">U9</button>
+      <div class="dropdown-content">
+        <a href="#">Link 2</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">U10</button>
+      <div class="dropdown-content">
+        <a href="#">Link 2</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">U11</button>
+      <div class="dropdown-content">
+        <a href="#">Link 2</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    </div>
+
+    <div class=main> 
+		<!DOCTYPE html>
+		<html>
+		<script>
+		class Vorrang {
+			constructor(abhaengigkeiten){
+				this._abhaengigkeiten = abhaengigkeiten;
+				this.topologischeSortierung = topsort(abhaengigkeiten);
+			}
+		
+			get abhaengigkeiten(){
+				return this._abhaengigkeiten;
+			}
+		
+			get topologischeSortierung(){
+				return this._topologischeSortierung;		
+			}
+		
+			set topologischeSortierung(topsort){
+				this._topologischeSortierung = topsort;
+			}
+		
+			[Symbol.iterator](){
+				const that = this;
+				let i = 0;
+				return {
+					next(){
+						return {
+							value: that._topologischeSortierung[i++],
+							done: i > that._topologischeSortierung.length	
+						}		
+					}
+				}
+			}
+		}
+		function getAllAttributes(abhaengigkeitenArray){
+			var atts = [];
+			for(var i = 0; i < abhaengigkeitenArray.length; i++){
+				for(var j = 0; j < abhaengigkeitenArray[i].length; j++){
+					if(!atts.includes(abhaengigkeitenArray[i][j])){
+						atts.push(abhaengigkeitenArray[i][j]);
+					}
+				}
+			}
+			return atts;
+		}
+		function getAbhaengigkeiten(attribut, abhaengigkeitenArray, ignoreArray = []){
+			var abh = [];
+			for(var i = 0; i < abhaengigkeitenArray.length; i++){
+				if(!abhaengigkeitenArray[i].includes(attribut)){
+					continue;
+				} else {
+					for(var j = 0; j <= abhaengigkeitenArray[i].length; j++){
+						if(abhaengigkeitenArray[i][j] === attribut){
+							break;
+						} else if (ignoreArray.includes(abhaengigkeitenArray[i][j])){
+							continue;
+						} else {
+							abh.push(abhaengigkeitenArray[i][j]);
+						}
+					}
+				}
+			}
+			return abh;
+			
+		}
+		
+		function topsort(abhaengigkeitenArray){
+			var topsort =[];
+			var atts = getAllAttributes(abhaengigkeitenArray);
+			while(topsort.length != atts.length){
+				var changes = 0;
+				for(var i=0; i < atts.length; i++){
+					if(topsort.includes(atts[i])){
+						continue;
+					} else if(getAbhaengigkeiten(atts[i], abhaengigkeitenArray, topsort).length === 0){
+						topsort.push(atts[i]);
+						changes +=1;
+					}
+				}
+				if(changes === 0) {
+					return "There is no topSort";
+				} else {
+					changes = 0;
+				}
+			}
+			return topsort;
+		}
+		//tests Vorrang Klasse
+		console.log("Starte Tests");
+		// :: Arrange ::
+		var undertest = new Vorrang([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]]);
+		var expected = [["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]];
+		
+		// :: Act ::
+		var actual = undertest.abhaengigkeiten;
+		
+		// :: Assert ::
+		console.assert(expected.length === actual.length, "ERROR! expected: " + expected + " actual: " + actual);
+		for(var i= 0; i < expected.length; i++){
+			console.assert(expected[i].length === actual[i].length);
+			for(var j=0; j < expected[i].length; j++){
+				console.assert(expected[i][j] === actual[i][j], "ERROR! expected: " + expected + " actual: " + actual);	
+			}
+		}
+		
+		// :: Arrange ::
+		expected = topsort([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]]);
+		
+		// :: Act ::
+		actual = undertest.topologischeSortierung;
+		
+		// :: Assert ::
+		console.assert(expected.length === actual.length, "ERROR! expected: " + expected + " actual: " + actual);
+		for(var i = 0; i < expected.length; i++){
+			console.assert(expected[i] === actual[i], "ERROR! expected: " + expected + " actual: " + actual);
+		}
+		
+		// Iterator Test for Vorrang class
+		expected = ["schlafen", "essen", "studieren", "prüfen"];
+		
+		var i = 0;
+		for(const tmp of undertest){
+			console.assert(expected[i++] === tmp);
+		}
+		
+		
+		
+		
+		// TESTS FUER TOPOLOGISCHE SORTIERUNG
+		// __________________________________
+		var abhaengigkeitenArray = [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ];
+		
+		
+		//Test getAllAttributes -> should return all Attributes
+		// :: Arrange ::
+		var expected = ["schlafen", "studieren", "essen", "prüfen"]
+		
+		// :: Act ::
+		var actual = getAllAttributes(abhaengigkeitenArray);
+		
+		// :: Assert ::
+		console.assert(expected.length === actual.length, "ERROR! expected: " + expected + " actual: " + actual);
+		for(var i = 0; i < expected.length; i++){
+			console.assert(expected[i] === actual[i], "ERROR! expected: " + expected + " actual: " + actual);	
+		}
+		
+		
+		//Test getAbhaengigkeiten
+		// :: Arrange ::
+		var expected1 = ["studieren"];
+		var expected2 = [];
+		
+		// :: Act ::
+		var actual1 = getAbhaengigkeiten("prüfen", abhaengigkeitenArray);
+		var actual2 = getAbhaengigkeiten("prüfen", abhaengigkeitenArray, "studieren");
+		
+		// :: Assert ::
+		console.assert(expected1.length === actual1.length, "ERROR! expected: " + expected + " actual: " + actual);
+		console.assert(expected2.length === actual2.length, "ERROR! expected: " + expected + " actual: " + actual);
+		
+		for(var i = 0; i < expected2.length; i++){
+		console.assert(expected1[i] === actual1[i], "ERROR! expected: " + expected + " actual: " + actual);
+		}
+		
+		for(var i = 0; i < expected2.length; i++){
+		console.assert(expected2[i] === actual2[i], "ERROR! expected: " + expected + " actual: " + actual);
+		}
+		
+		//Test topsort
+		// :: Arrange ::
+		expected = ["schlafen", "essen", "studieren", "prüfen"];
+		
+		// :: Act ::
+		actual = topsort(abhaengigkeitenArray);
+		
+		// :: Assert ::
+		console.assert(expected.length === actual.length, "ERROR! expected: " + expected + " actual: " + actual);
+		for(var i = 0; i < expected.length; i++){
+		console.assert(expected[i] === actual[i], "ERROR! expected: " + expected + " actual: " + actual);
+		}
+		
+		
+		//test topsort unlösbar
+		// :: Arrange ::
+		expected = "There is no topSort";
+		var nichtSortierBar = [[1,2],[2,1],[3,4]];
+		
+		// :: Act ::
+		actual = topsort(nichtSortierBar);
+		
+		// :: Assert ::
+		console.assert(expected === actual, "ERROR! expected: " + expected + " actual: " + actual);
+		
+		console.log("Tests fertig");
+		</script>
+		
+		
+		</html>
+	</div>
+	
+
+
+    <div class="footer">
+      <p> Semesterprojekt Web-Engineering WS20/21</p>
+        <p> von Marcel Blasius </p>
+    <div>
+</div>
+
+</body>
+</html>
