@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        const identity_function = x => x;
+        const addf = x => y => x + y;
+        const mul = (x,y) => x * y;
+        const applyf = x => y => z => x(y,z);
+        function curry(fun, a) {
+	return b => {
+	  return fun(a,b);
+ }
+}
+
+const inc = x => addf(x)(1);
+const incWithAddf = x => addf(x)(1);
+const incWithApplyf = x=> applyf(add)(x)(1);
+const incWithCurry = x=> curry(add, x)(1);
+function methodize(fun){
+    return function(y){
+        return fun(this, y);
+    }
+}
+const twice = f => x => f(x,x);
+const double = twice(add);
+const square = twice(mul);
+const composeu = (f, g) => x => {
+	x = f(x);
+	return g(x);
+};
+const composeu = (f, g) => x => {
+	x = f(x);
+	return g(x);
+};
+function once(fun){
+	let count = false;
+
+	return function(a, b){
+		if(count) return ("ERROR")
+		count = true;
+		return fun(a,b);
+	}
+}
+function counterf(number){
+	
+	return {
+	number: number,
+	inc: () => ++number,
+	dec: () => --number
+	}
+};
+function revocable(fun){
+    let revoked = false;
+
+    this.invoke = x=> {
+        if(revoked) return "ERROR";
+        return fun(x);
+    };
+
+    this.revoke = () => revoked = true;
+};
+function vector(){
+    const array = [];
+
+    this.get = x => {return array[x]};
+
+    this.append = x => array.push(x);
+
+    this.store = (index, value) => array[index] = value;
+};
+    </script>
+</html>
