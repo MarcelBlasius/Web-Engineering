@@ -16,9 +16,8 @@
       <p>TODO!</p>
     </div>
     <div class="footer">
-      <p> Semesterprojekt Web-Engineering WS20/21</p>
-        <p> von Marcel Blasius </p>
-    <div>
+    <script src="/Semesterprojekt/structure/getFooter.js"></script>
+  </div>
 </div>
 
 </body>
