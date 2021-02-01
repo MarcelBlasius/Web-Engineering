@@ -25,6 +25,8 @@ body{
   grid-row: 1;
   min-height: 80vh;
   grid-column: 3/4;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 .footer{
