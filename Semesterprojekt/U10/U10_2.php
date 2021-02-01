@@ -44,7 +44,7 @@
             }
         }
     }
-    if(!$gefunden){
+    if(!$gefunden && ($anzeigename || $passwort)){
         echo "<script>alert('Name oder Passwort falsch!')</script>";
     }
 
