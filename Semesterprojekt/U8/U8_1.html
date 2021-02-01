@@ -14,7 +14,7 @@
 
     <div class=main> 
         <script>
-
+          const main = document.getElementsByClassName("main")[0];
             Promise.all([
               fetch('A.txt').then(x => x.text()),
               fetch('B.txt').then(x => x.text())
@@ -23,26 +23,26 @@
                 brows = bResp.match(/[^\r\n]+/g);
                 if(arows.length === brows.length){
                     for(let i = 0; i < arows.length; i++){
-                        document.body.appendChild(document.createTextNode(arows[i] + brows[i]));
-                        document.body.appendChild(document.createElement("br"));
+                        main.appendChild(document.createTextNode(arows[i] + brows[i]));
+                        main.appendChild(document.createElement("br"));
                     }
                 } else if (arows.length > brows.length){
                     for(let i = 0; i < arows.length; i++){
                         if(brows[i] !== undefined){
-                            document.body.appendChild(document.createTextNode(arows[i] + brows[i]));
+                          main.appendChild(document.createTextNode(arows[i] + brows[i]));
                         } else {
-                            document.body.appendChild(document.createTextNode(arows[i]));
+                          main.appendChild(document.createTextNode(arows[i]));
                         }
-                        document.body.appendChild(document.createElement("br"));
+                        main.appendChild(document.createElement("br"));
                     }
                 } else {
                     for(let i = 0; i < brows.length; i++){
                         if(arows[i] !== undefined){
-                            document.body.appendChild(document.createTextNode(arows[i] + brows[i]));
+                          mainy.appendChild(document.createTextNode(arows[i] + brows[i]));
                         } else {
-                            document.body.appendChild(document.createTextNode(brows[i]));
+                          main.appendChild(document.createTextNode(brows[i]));
                         }
-                        document.body.appendChild(document.createElement("br"));
+                        main.appendChild(document.createElement("br"));
                     }
                 }
             });
