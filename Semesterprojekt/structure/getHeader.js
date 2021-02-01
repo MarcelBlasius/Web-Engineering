@@ -2,7 +2,7 @@
     const head = document.getElementsByClassName("header")[0];
     
     async function getHeader(){
-        await fetch("/Semesterprojekt/structure/header.html")
+        await fetch("../structure/header.html")
             .then( res =>res.text())
                 .then(data => {
                     head.innerHTML = data;
