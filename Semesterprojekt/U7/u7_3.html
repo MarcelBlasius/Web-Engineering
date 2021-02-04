@@ -4,7 +4,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="../styles/indexStyle.css" rel="stylesheet" type="text/css">
 <style>
+.main h1{
+  text-align: center;
+}
+.main{
+  text-align: center;
+}
 
+.input{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.abhInput{
+  width: 10vw;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  text-align: center;
+}
 </style>
 </head>
 <body>
@@ -14,12 +34,101 @@
     </div>
 
     <div class=main> 
-      <p>TODO!</p>
+      <h1>TopSort als Webapp</h1>
+      <p> Abhaengigkeiten jeweils im Format A1 , A2 , A3, ..., An angeben.</p>
+      <div class="input">
+        <input class="abhInput" placeholder="A1 , A2, A3, ... An">
+      </div>
+      <input id="moreDependencys" type="button" value="+"> <br>
+      <input id="compute" type="button" value="ausrechnen">
+      <p> Ergebnis:</p>
+      <span id="result">  </span>
     </div>
     <div class="footer">
       <script src="../structure/getFooter.js"></script>
     </div>
 </div>
 
+<script>
+
+const hinzufuegenButton = document.getElementById("moreDependencys");
+hinzufuegenButton.addEventListener("click", () =>{
+  const inputList = document.getElementsByClassName("input")[0];
+  const abh = document.createElement("input");
+  abh.placeholder ="A1 , A2, A3, ... An"
+  abh.className="abhInput";
+  abh.type = "text";
+  inputList.appendChild(abh);
+});
+
+const computeButton = document.getElementById("compute");
+computeButton.addEventListener("click", () =>{
+  const result = document.getElementById("result");
+  let abh = [];
+  const abhInput = document.getElementsByClassName("abhInput");
+  for(const abhaengigkeit of abhInput ){
+    if(abhaengigkeit.value != ""){
+    const format = abhaengigkeit.value.split(",");
+    abh.push(format);
+    }
+  }
+  result.textContent = topsort(abh);
+});
+
+function getAllAttributes(abhaengigkeitenArray){
+	var atts = [];
+	for(var i = 0; i < abhaengigkeitenArray.length; i++){
+		for(var j = 0; j < abhaengigkeitenArray[i].length; j++){
+			if(!atts.includes(abhaengigkeitenArray[i][j])){
+				atts.push(abhaengigkeitenArray[i][j]);
+			}
+		}
+	}
+	return atts;
+}
+function getAbhaengigkeiten(attribut, abhaengigkeitenArray, ignoreArray = []){
+	var abh = [];
+	for(var i = 0; i < abhaengigkeitenArray.length; i++){
+		if(!abhaengigkeitenArray[i].includes(attribut)){
+			continue;
+		} else {
+			for(var j = 0; j <= abhaengigkeitenArray[i].length; j++){
+				if(abhaengigkeitenArray[i][j] === attribut){
+					break;
+				} else if (ignoreArray.includes(abhaengigkeitenArray[i][j])){
+					continue;
+				} else {
+					abh.push(abhaengigkeitenArray[i][j]);
+				}
+			}
+		}
+	}
+	return abh;
+	
+}
+
+function topsort(abhaengigkeitenArray){
+	var topsort =[];
+	var atts = getAllAttributes(abhaengigkeitenArray);
+	while(topsort.length != atts.length){
+		var changes = 0;
+		for(var i=0; i < atts.length; i++){
+			if(topsort.includes(atts[i])){
+				continue;
+			} else if(getAbhaengigkeiten(atts[i], abhaengigkeitenArray, topsort).length === 0){
+				topsort.push(atts[i]);
+				changes +=1;
+			}
+		}
+		if(changes === 0) {
+			return "There is no topSort";
+		} else {
+			changes = 0;
+		}
+	}
+	return topsort;
+}
+
+</script>
 </body>
 </html>
