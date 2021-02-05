@@ -72,8 +72,17 @@ img{
       </script>
 
       <p>Schreiben Sie eine Funktion demethodize(), die eine unäre Methode (z.B. add, mul) in eine binäre Funktion umwandelt. demethodize (Number.prototype.add)(5, 6) soll 11 ergeben.</p>
-      <p><b> TODO!</b></p>
+      <img src="6_1_demethodize.png" alt="Demethodize Funtion">
       <hr>
+      <script>
+        //Mithilfe der Lösungen gelöst: https://kaul.inf.h-brs.de/we/#app-content-7-2
+        function demethodize(f){
+          return (x,y) => {
+            return f.call(x,y);
+          };
+        }
+
+      </script>
 
       <p>Schreiben Sie eine Funktion twice(), die eine binäre Funktion in eine unäre Funktion umwandelt, die den einen Parameter zweimal weiter reicht. Z.B. var double = twice(add); double(11) soll 22 ergeben; var square = twice(mul); square(11) soll mul(11,11) === 121 ergeben.</p>
       <img src="6_1_twice.png" alt="Twice Funktion Funktional">
@@ -95,8 +104,16 @@ img{
       </script>
       
       <p>Schreiben Sie eine Funktion composeb(), die zwei binäre Funktionen in eine einzelne Funktion transformiert, die beide nacheinander aufruft, z.B. composeb(add, mul)(2, 3, 5) soll 25 ergeben.</p>
-      <p><b>TODO!</b></p>
+      <img src="6_1_composeb.png" alt="Composeb Funktion">
       <hr>
+      <script>
+        //Mithilfe der Lösungen gelöst: https://kaul.inf.h-brs.de/we/#app-content-7-2
+        function composeb(f,g){
+          return (...args) => {
+            return g(f(args[0], args[1], args[2]));
+          };
+        }
+      </script>
 
       <p>Schreiben Sie eine Funktion once(), die einer anderen Funktion nur einmal erlaubt, aufgerufen zu werden, z.B. add_once = once(add); add_once(3, 4) soll beim ersten Mal 7 ergeben, beim zweiten Mal soll jedoch add_once(3, 4) einen Fehlerabbruch bewirken.</p>
       <img src="6_1_once.png" alt="Once Funktion Funktional">

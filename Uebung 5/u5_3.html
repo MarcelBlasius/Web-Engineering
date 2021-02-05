@@ -18,20 +18,6 @@ class Vorrang {
 	set topologischeSortierung(topsort){
 		this._topologischeSortierung = topsort;
 	}
-/*
-	[Symbol.iterator](){
-		const that = this;
-		let i = 0;
-		return {
-			next(){
-				return {
-					value: that._topologischeSortierung[i++],
-					done: i > that._topologischeSortierung.length	
-				}		
-			}
-		}
-	}
-*/
 
 	* [Symbol.iterator]() {
 			for(let i = 0; i < this._topologischeSortierung.length; i++){
@@ -40,6 +26,7 @@ class Vorrang {
 	}
 
 }
+
 function getAllAttributes(abhaengigkeitenArray){
 	var atts = [];
 	for(var i = 0; i < abhaengigkeitenArray.length; i++){

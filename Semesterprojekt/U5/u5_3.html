@@ -13,6 +13,13 @@
 		</div>
 
     <div class=main> 
+		<h1> Topologischer Generator </h1>
+		<p>Stellen Sie bei Ihrer Klasse aus der vorletzten Aufgabe die topologische Iterierbarkeit mittels Generator her.</p>
+		Implementierung: <br>
+		<img src="5_3_topGenerator.png" alt="Topoligischer Generator Implementierung">
+		<br>
+		Tests:<br>
+		<img src="5_3_topGenerator_tests.png" alt="Topologischer Generator Tests">
 		<script>
 			class Vorrang {
 				constructor(abhaengigkeiten){
@@ -31,20 +38,6 @@
 				set topologischeSortierung(topsort){
 					this._topologischeSortierung = topsort;
 				}
-			/*
-				[Symbol.iterator](){
-					const that = this;
-					let i = 0;
-					return {
-						next(){
-							return {
-								value: that._topologischeSortierung[i++],
-								done: i > that._topologischeSortierung.length	
-							}		
-						}
-					}
-				}
-			*/
 			
 				* [Symbol.iterator]() {
 						for(let i = 0; i < this._topologischeSortierung.length; i++){
@@ -143,76 +136,6 @@
 			for(const tmp of undertest){
 				console.assert(expected[i++] === tmp);
 			}
-			
-			
-			
-			
-			// TESTS FUER TOPOLOGISCHE SORTIERUNG
-			// __________________________________
-			var abhaengigkeitenArray = [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ];
-			
-			
-			//Test getAllAttributes -> should return all Attributes
-			// :: Arrange ::
-			var expected = ["schlafen", "studieren", "essen", "prüfen"]
-			
-			// :: Act ::
-			var actual = getAllAttributes(abhaengigkeitenArray);
-			
-			// :: Assert ::
-			console.assert(expected.length === actual.length, "ERROR! expected: " + expected + " actual: " + actual);
-			for(var i = 0; i < expected.length; i++){
-				console.assert(expected[i] === actual[i], "ERROR! expected: " + expected + " actual: " + actual);	
-			}
-			
-			
-			//Test getAbhaengigkeiten
-			// :: Arrange ::
-			var expected1 = ["studieren"];
-			var expected2 = [];
-			
-			// :: Act ::
-			var actual1 = getAbhaengigkeiten("prüfen", abhaengigkeitenArray);
-			var actual2 = getAbhaengigkeiten("prüfen", abhaengigkeitenArray, "studieren");
-			
-			// :: Assert ::
-			console.assert(expected1.length === actual1.length, "ERROR! expected: " + expected + " actual: " + actual);
-			console.assert(expected2.length === actual2.length, "ERROR! expected: " + expected + " actual: " + actual);
-			
-			for(var i = 0; i < expected2.length; i++){
-			console.assert(expected1[i] === actual1[i], "ERROR! expected: " + expected + " actual: " + actual);
-			}
-			
-			for(var i = 0; i < expected2.length; i++){
-			console.assert(expected2[i] === actual2[i], "ERROR! expected: " + expected + " actual: " + actual);
-			}
-			
-			//Test topsort
-			// :: Arrange ::
-			expected = ["schlafen", "essen", "studieren", "prüfen"];
-			
-			// :: Act ::
-			actual = topsort(abhaengigkeitenArray);
-			
-			// :: Assert ::
-			console.assert(expected.length === actual.length, "ERROR! expected: " + expected + " actual: " + actual);
-			for(var i = 0; i < expected.length; i++){
-			console.assert(expected[i] === actual[i], "ERROR! expected: " + expected + " actual: " + actual);
-			}
-			
-			
-			//test topsort unlösbar
-			// :: Arrange ::
-			expected = "There is no topSort";
-			var nichtSortierBar = [[1,2],[2,1],[3,4]];
-			
-			// :: Act ::
-			actual = topsort(nichtSortierBar);
-			
-			// :: Assert ::
-			console.assert(expected === actual, "ERROR! expected: " + expected + " actual: " + actual);
-			
-			console.log("Tests fertig");
 			</script>
     </div>
 	<div class="footer">

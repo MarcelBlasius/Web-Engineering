@@ -1,1 +1,44 @@
-TODO
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+//Gelöst mithilfe der Lösungen: https://kaul.inf.h-brs.de/we/#app-content-6-2
+const deepCopy = (struct) => 
+    Array.isArray(struct) ? struct.map(x => deepCopy(x)) 
+                        : typeof struct ==="object"
+                            ? Object.fromEntries(deepCopy(Object.entries(struct)))
+                            : struct;
+                    
+// Tests 
+// :: Arrange ::
+var copyThis = [[1,2],[3,4]];
+
+// :: Act ::
+var copiedObject = deepCopy(copyThis);
+
+// :: Assert ::
+console.log(Object.values(copyThis));
+console.log(Object.values(copiedObject));
+console.assert(Object.values(copyThis).length === Object.values(copiedObject).length);
+for(var i= 0; i < Object.values(copyThis).length; i++){
+	for(var j = 0; j < Object.values(copyThis).length; j++){
+		console.assert(Object.values(copyThis)[i][j].length === Object.values(copiedObject)[i][j].length);
+		console.assert(Object.values(copyThis)[i][j] === Object.values(copiedObject)[i][j]);
+	}
+}
+
+// Test: Objekt Veraenderungen sind unabhaengig 
+// :: Arrange ::
+copyThis = [[1,2],[3,4]];
+
+// :: Act ::
+copiedObject = deepCopy(copyThis);
+copiedObject[0][0] = 0;
+
+// :: Assert ::
+console.assert(Object.values(copyThis)[0][0] !== Object.values(copiedObject)[0][0]);
+</script>
+
+</body>
+
+</html>

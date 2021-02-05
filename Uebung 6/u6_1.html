@@ -67,5 +67,22 @@ function vector(){
 
     this.store = (index, value) => array[index] = value;
 };
+
+
+//Mithilfe der Lösungen gelöst: https://kaul.inf.h-brs.de/we/#app-content-7-2
+function demethodize(f){
+    return (x,y) => {
+        return f.call(x,y);
+    };
+}
+
+//Mithilfe der Lösungen gelöst: https://kaul.inf.h-brs.de/we/#app-content-7-2
+function composeb(f,g){
+    return (...args) => {
+        return g(f(args[0], args[1], args[2]));
+    };
+}
+
+
     </script>
 </html>
