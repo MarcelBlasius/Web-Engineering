@@ -22,4 +22,13 @@ function addf(x){
   }
 }
 
-//TODO applyf
+//Mit Hilfe der Lösungen gelöst: https://kaul.inf.h-brs.de/we/#app-content-5-2
+function apply(f){
+  var first = function(x){
+    var second = function(y){
+      return f(x,y)
+    }
+    return second;
+  }
+  return first;
+}
