@@ -17,6 +17,7 @@ img{
     </div>
 
     <div class=main> 
+      <h1> Funktionen in JavaScript</h1>
       <p>Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurueck gibt, die dieses Argument zurueck gibt.</p>
       <img src="6_1_identity_function().png" alt="Identity Funktion Funktional">
       <hr>
@@ -88,6 +89,7 @@ img{
       <img src="6_1_twice.png" alt="Twice Funktion Funktional">
       <hr>
       <script>
+        const add = (x,y) => x + y;
         const twice = f => x => f(x,x);
         const double = twice(add);
         const square = twice(mul);
