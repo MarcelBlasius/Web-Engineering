@@ -1,1 +1,35 @@
-TODO
+<!DOCTYPE html>
+<html>
+    <body>
+
+
+
+        <script>
+            // Stopwoerter von: https://www.pc-erfahrung.de/nebenrubriken/sonstiges/webdesignwebentwicklung/stoppwortliste.html
+            const stopwords = ["ab", "aber", "alle", "allem", "allen", "aller", "allerdings", "als", "also", "am", "an", "andere", "anderem", "anderen", "anderer", "andernfalls", "anders", "andersherum", "anfangs", "anhand", "anschließend", "ansonsten", "anstatt", "auch", "auf", "aufgrund", "aus", "außerdem", "befindet", "bei", "beide", "beim", "beispielsweise", "bereits", "besonders", "besteht", "bestimmte", "bestimmten", "bestimmter", "bevor", "bietet", "bis", "bleiben", "bringen", "bringt", "bsp", "bzw", "d.h", "da", "dabei", "dafür", "daher", "damit", "danach", "dann", "dar", "daran", "darauf", "daraus", "darf", "darstellt", "darüber", "das", "dass", "davon", "dazu", "dem", "demzufolge", "den", "denen", "denn", "der", "deren", "des", "dessen", "desto", "die", "dies", "diese", "diesem", "diesen", "dieser", "dieses", "doch", "dort", "durch", "ebenfalls", "eher", "eigenen", "eigentlich", "ein", "eine", "einem", "einen", "einer", "eines", "einigen", "einiges", "einmal", "einzelnen", "entscheidend", "entweder", "er", "erstmals", "es", "etc", "etwas", "euch", "folgende", "folgendem", "folgenden", "folgender", "folgendes", "folgt", "für", "ganz", "gegen", "gehen", "gemacht", "genannte", "genannten", "gerade", "gerne", "gibt", "gilt", "gleich", "gleichen", "gleichzeitig", "habe", "haben", "hält", "hat", "hatte", "hätte", "hauptsächlich", "her", "heutigen", "hier", "hierbei", "hierfür", "hin", "hingegen", "hinzu", "hoch", "ihn", "ihr", "ihre", "ihren", "ihrer", "im", "immer", "immerhin", "in", "indem", "insgesamt", "ist", "ja", "je", "jede", "jedem", "jeder", "jedes", "jedoch", "jetzt", "jeweilige", "jeweiligen", "jeweils", "kam", "kann", "keine", "kommen", "kommt", "können", "konnte", "könnte", "konnten", "lassen", "lässt", "lautet", "lediglich", "leider", "letztendlich", "letztere", "letzteres", "liegt", "machen", "macht", "mal", "man", "mehr", "mehrere", "meine", "meinem", "meisten", "mich", "mit", "mithilfe", "mittels", "möchte", "möglich", "möglichst", "momentan", "muss", "müssen", "musste", "nach", "nachdem", "nächsten", "nahezu", "nämlich", "natürlich", "neue", "neuen", "nicht", "nichts", "noch", "nun", "nur", "ob", "obwohl", "oder", "oftmals", "ohne", "per", "sämtliche", "scheint", "schon", "sehr", "sein", "seine", "seinem", "seinen", "sich", "sicherlich", "sie", "siehe", "sind", "so", "sobald", "sofern", "solche", "solchen", "soll", "sollen", "sollte", "sollten", "somit", "sondern", "sorgt", "sowie", "sowohl", "später", "sprich", "statt", "trotz", "über", "überhaupt", "um", "und", "uns", "unter", "usw", "viel", "viele", "vielen", "völlig", "vom", "von", "vor", "vorerst", "vorher", "während", "war", "wäre", "waren", "warum", "was", "weil", "weitere", "weiteren", "weiterer", "weiteres", "weiterhin", "welche", "welchen", "welcher", "welches", "wenn", "wer", "werden", "wesentlich", "wichtige", "wichtigsten", "wie", "wieder", "wiederum", "will", "wir", "wird", "wirklich", "wo", "wobei", "worden", "wurde", "wurden", "z.b", "ziemlich", "zu", "zuerst", "zum", "zur", "zusätzlich", "zuvor", "zwar", "zwecks"]; 
+            const text = "Plagiatsresolution und -maßnahmen PDF export %filemtime% Resolution zum akademischen Ethos und zu den akademischen Standards In guter Tradition und anlässlich der öffentlichen Diskussion zum Plagiatsthema sieht sich die Hochschule Bonn-Rhein-Sieg in der Pflicht, ihre Position klar und eindeutig zu bekunden und hochschulweit Maßnahmen einzuleiten. 1. Die Hochschule Bonn-Rhein-Sieg bekennt sich mit dieser Resolution öffentlich zum akademischen Ethos und den akademischen Standards. 2. Die Hochschule Bonn-Rhein-Sieg sieht sich verpflichtet, alle Studierende frühzeitig im Studium sowohl über den wissenschaftlichen Auftrag und den akademischen Ethos als auch über die Konsequenzen seiner Missachtung aufzuklären. In allen Studiengängen wird intensiv in die wissenschaftliche Arbeits- und Denkweise eingeführt und über den akademischen Ethos und die akademischen Standards klar und eindeutig aufgeklärt. 3. In einer Selbstverpflichtungserklärung zum akademischen Ethos geben alle Studierende der Hochschule Bonn-Rhein-Sieg spätestens gegen Ende des ersten Studienjahres zum Ausdruck, dass sie sich von den Dozentinnen und Dozenten der Hochschule Bonn-Rhein-Sieg hinreichend über den akademischen Ethos und die akademischen Standards aufgeklärt sind und diese beachten werden. Der Senat befürwortete in seiner Sitzung am 03.05.2012 die Resolution in der o.g. Fassung. Eckpunkte zur Plagiatsprüfung Der Senat empfiehlt: 1. Die Aufklärung und das Bekenntnis zum akademischen Ethos und den akademischen Standards muss fester Bestandteil aller Curricula aller Studiengänge im ersten Studienjahr sein. Alle Curricula aller Studiengänge werden darauf hin geprüft und ggfs. ergänzt. 2. Alle Abschlussarbeiten werden auf Plagiate geprüft. 3. Alle Abschlussarbeiten mit Plagiaten werden grundsätzlich als Fehlversuch gewertet. 4. Die Entscheidung, ob die Arbeit Plagiate enthält, liegt zuerst bei den Gutachterinnen und Gutachtern. Der Nachweis in einem Gutachten reicht. 5. Alle Abschlussarbeiten werden grundsätzlich auch in elektronischer Form (PDF-Format und Originalformat wie Word, OpenOffice, ...) eingereicht. 6. Alle Abschlussarbeiten ohne Sperrvermerk werden einem vom Fachbereich definierten Kreis zur Einsicht zur Verfügung gestellt. Alle Abschlussarbeiten sollten nach Möglichkeit grundsätzlich zur Veröffentlichung freigegeben werden. Wissenschaft zielt auf Veröffentlichung ab. Nichtveröffentlichung sollte nur in begründeten und durch den Prüfungsausschuss genehmigten Ausnahmefällen geschehen. 7. Im Bereich von Seminar-, Hausarbeiten und Praktikumsberichten behält sich die Hochschule stichprobenartige Plagiatsprüfungen vor. Selbstverpflichtungserklärung der Studierenden: Eine akademische Arbeit stellt eine individuelle Leistung dar, die eigenständig und allein auf Basis der im Literaturverzeichnis angegebenen Quellen erstellt wurde und in der alle Zitate als solche gekennzeichnet sind. 'Ich erkläre hiermit, dass ich den akademischen Ehrencodex kenne und über die Folgen einer Missachtung oder Verletzung aufgeklärt worden bin.'"
+            
+
+            // Angelehnt an Lösungen von: https://kaul.inf.h-brs.de/we/#app-content-7-2
+            function analyze(text){
+                wordArray = Array.from(
+                    text.toLowerCase().replace(/<[^>]*>|[\n\r\t\d\'\.\-,\(\)"]/g, "").replace(/ {2,}/g, ).split(" ")
+                    .filter(x => !stopwords.includes(x) && x != "")
+                    .reduce(function(map, word){
+                    if(map.get(word) === undefined){
+                        map.set(word,1);
+                    }else{
+                        map.set(word,map.get(word)+1);
+                    }
+                    return map;
+                    }, new Map())
+                        .entries());
+
+                return wordArray.sort( (a,b) => b[1] - a[1]).slice(0, 3);
+            }
+            console.log(analyze(text))
+            
+
+        </script>
+    </body>
+</html>

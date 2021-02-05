@@ -5,6 +5,10 @@
 <link href="../styles/indexStyle.css" rel="stylesheet" type="text/css">
 <style>
 
+#textInput{
+  min-width: 25vw;
+
+}
 </style>
 </head>
 <body>
@@ -14,7 +18,50 @@
     </div>
 
     <div class=main> 
-      <p>TODO!</p>
+      <h1>Filter-Map-Reduce als Webapp</h1>
+      Text eingeben: <br>
+      <div class="input">
+        <input id="textInput" placeholder="Es war einmal ...">
+      </div>
+      <input id="analyze" type="button" value="analysieren">
+      <p> Ergebnis:</p>
+      <span id="result">  </span>
+    </div>
+      <script>
+            // Stopwoerter von: https://www.pc-erfahrung.de/nebenrubriken/sonstiges/webdesignwebentwicklung/stoppwortliste.html
+                    const stopwords = ["ab", "aber", "alle", "allem", "allen", "aller", "allerdings", "als", "also", "am", "an", "andere", "anderem", "anderen", "anderer", "andernfalls", "anders", "andersherum", "anfangs", "anhand", "anschließend", "ansonsten", "anstatt", "auch", "auf", "aufgrund", "aus", "außerdem", "befindet", "bei", "beide", "beim", "beispielsweise", "bereits", "besonders", "besteht", "bestimmte", "bestimmten", "bestimmter", "bevor", "bietet", "bis", "bleiben", "bringen", "bringt", "bsp", "bzw", "d.h", "da", "dabei", "dafür", "daher", "damit", "danach", "dann", "dar", "daran", "darauf", "daraus", "darf", "darstellt", "darüber", "das", "dass", "davon", "dazu", "dem", "demzufolge", "den", "denen", "denn", "der", "deren", "des", "dessen", "desto", "die", "dies", "diese", "diesem", "diesen", "dieser", "dieses", "doch", "dort", "durch", "ebenfalls", "eher", "eigenen", "eigentlich", "ein", "eine", "einem", "einen", "einer", "eines", "einigen", "einiges", "einmal", "einzelnen", "entscheidend", "entweder", "er", "erstmals", "es", "etc", "etwas", "euch", "folgende", "folgendem", "folgenden", "folgender", "folgendes", "folgt", "für", "ganz", "gegen", "gehen", "gemacht", "genannte", "genannten", "gerade", "gerne", "gibt", "gilt", "gleich", "gleichen", "gleichzeitig", "habe", "haben", "hält", "hat", "hatte", "hätte", "hauptsächlich", "her", "heutigen", "hier", "hierbei", "hierfür", "hin", "hingegen", "hinzu", "hoch", "ihn", "ihr", "ihre", "ihren", "ihrer", "im", "immer", "immerhin", "in", "indem", "insgesamt", "ist", "ja", "je", "jede", "jedem", "jeder", "jedes", "jedoch", "jetzt", "jeweilige", "jeweiligen", "jeweils", "kam", "kann", "keine", "kommen", "kommt", "können", "konnte", "könnte", "konnten", "lassen", "lässt", "lautet", "lediglich", "leider", "letztendlich", "letztere", "letzteres", "liegt", "machen", "macht", "mal", "man", "mehr", "mehrere", "meine", "meinem", "meisten", "mich", "mit", "mithilfe", "mittels", "möchte", "möglich", "möglichst", "momentan", "muss", "müssen", "musste", "nach", "nachdem", "nächsten", "nahezu", "nämlich", "natürlich", "neue", "neuen", "nicht", "nichts", "noch", "nun", "nur", "ob", "obwohl", "oder", "oftmals", "ohne", "per", "sämtliche", "scheint", "schon", "sehr", "sein", "seine", "seinem", "seinen", "sich", "sicherlich", "sie", "siehe", "sind", "so", "sobald", "sofern", "solche", "solchen", "soll", "sollen", "sollte", "sollten", "somit", "sondern", "sorgt", "sowie", "sowohl", "später", "sprich", "statt", "trotz", "über", "überhaupt", "um", "und", "uns", "unter", "usw", "viel", "viele", "vielen", "völlig", "vom", "von", "vor", "vorerst", "vorher", "während", "war", "wäre", "waren", "warum", "was", "weil", "weitere", "weiteren", "weiterer", "weiteres", "weiterhin", "welche", "welchen", "welcher", "welches", "wenn", "wer", "werden", "wesentlich", "wichtige", "wichtigsten", "wie", "wieder", "wiederum", "will", "wir", "wird", "wirklich", "wo", "wobei", "worden", "wurde", "wurden", "z.b", "ziemlich", "zu", "zuerst", "zum", "zur", "zusätzlich", "zuvor", "zwar", "zwecks"]; 
+                    const analyzeButton = document.getElementById("analyze");
+                    analyzeButton.addEventListener("click", () =>{
+                      const result = document.getElementById("result");
+                      const text = document.getElementById("textInput");
+                      let p = document.createElement("p");
+                      
+                      const analyzedText = analyze(text.value);
+                      console.log(analyzedText)
+                      result.innerText = "";
+                      for(const item of analyzedText){
+                        result.innerText += "Wort: " + item[0] + ", Anzahl: " + item[1] +  "\n";
+                      }
+});
+
+            // Angelehnt an Lösungen von: https://kaul.inf.h-brs.de/we/#app-content-7-2
+            function analyze(text){
+                wordArray = Array.from(
+                    text.toLowerCase().replace(/<[^>]*>|[\n\r\t\d\'\.\-,\(\)"]/g, "").replace(/ {2,}/g, ).split(" ")
+                    .filter(x => !stopwords.includes(x) && x != "")
+                    .reduce(function(map, word){
+                    if(map.get(word) === undefined){
+                        map.set(word,1);
+                    }else{
+                        map.set(word,map.get(word)+1);
+                    }
+                    return map;
+                    }, new Map())
+                        .entries());
+
+                return wordArray.sort( (a,b) => b[1] - a[1]).slice(0, wordArray.length > 2 ? 3 : wordArray.length-1);
+            }
+      </script>
     </div>
     <div class="footer">
       <script src="../structure/getFooter.js"></script>
