@@ -102,20 +102,15 @@ body{
     grid-row: 1;
     grid-column: 1/5;
     background-color: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
     border-right: 0px;
     height: 10vh;
     border-bottom: 2vh solid orange;
-    
-
   }
 
   .nav{
+    margin-top: 0vh;
     flex-direction: row;
+    margin-bottom: 1vh;
   }
   .main{
     grid-row:2;
