@@ -20,6 +20,8 @@
               fetch('A.txt').then(x => x.text()),
               fetch('B.txt').then(x => x.text())
             ]).then(([aResp, bResp]) => {
+              
+              //Split aus: https://stackoverflow.com/questions/21711768/split-string-in-javascript-and-detect-line-break
                 arows = aResp.match(/[^\r\n]+/g);
                 brows = bResp.match(/[^\r\n]+/g);
                 if(arows.length === brows.length){
