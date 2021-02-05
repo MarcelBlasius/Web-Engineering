@@ -40,22 +40,36 @@ function addf(x){
   return function f(y) {
      return x + y;
   }
+  
+//Mit Hilfe der Lösungen gelöst: https://kaul.inf.h-brs.de/we/#app-content-5-2
+function apply(f){
+  var first = function(x){
+    var second = function(y){
+      return f(x,y)
+    }
+    return second;
+  }
+  return first;
 }
-
-//TODO applyf
+}
 </script>
+<h1> Funktionen </h1>
 <p> Schreiben Sie eine Funktion identity(), die ein Argument als Parameter entgegen nimmt und dieses als Ergebnis zurück gibt: </p>
 <img src="4_1_identity.png" alt="identity function">
+<hr>
 
 <p>Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt:</p>
 <img src="4_1_identity_function.png" alt="identity function">
+<hr>
 
 <p>Schreiben Sie zwei binäre Funktionen add und mul, die Summe und Produkt berechnen:</p>
 <img src="4_1_add.png" alt="add function">
 <img src="4_1_mul.png" alt="mul function">
+<hr>
 
 <p>Schreiben Sie eine Addier-Funktion addf(), so dass addf(x)(y) genau x + y zurück gibt. (Es haben also zwei Funktionsaufrufe zu erfolgen. addf(x) liefert eine Funktion, die auf y angewandt wird.):</p>
 <img src="4_1_addf.png" alt="addf function">
+<hr>
 
 <p>Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist.</p>
 <img src="4_1_applyf.png" alt="applyf function">
