@@ -2,6 +2,7 @@ const list = document.getElementById("list");
 const input = document.getElementById("InputName");
 
 input.addEventListener("keyup", event =>{
+    //Key ansteuern: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
     if(event.key == "Enter"){
         document.getElementById("hinzufuegenButton").click();
     }
