@@ -29,6 +29,16 @@ body{
   margin-top: 5vh;
 }
 
+.nav{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0vh;
+  z-index: 2;
+}
+
 .footer{
   grid-column: 1/10;
   text-align: center;
@@ -101,6 +111,10 @@ body{
     border-bottom: 2vh solid orange;
     
 
+  }
+
+  .nav{
+    flex-direction: row;
   }
   .main{
     grid-row:2;
