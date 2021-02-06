@@ -38,7 +38,7 @@
         list( $csvanzeigename, $csvpasswort) = explode(",", $line);
         if($csvanzeigename === hash("sha384", $anzeigename)){
             if($csvpasswort === hash("sha384", $passwort) . "\n"){
-                header("Location : /navigator.php");
+                header("Location: ./navigator.php");
                 $gefunden = true;
                 break;
             }
