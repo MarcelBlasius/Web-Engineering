@@ -1,0 +1,28 @@
+{
+  "html": {
+  "headings": {
+  "h1": "First order Header",
+  "h2": "Second order Header"
+  },
+  "paragraphs": {},
+  "links": {},
+  "images": {},
+  "tables": {}
+  },
+  "css": {
+  "selectors": {},
+  "colors": {},
+  "boxes": {},
+  "display": {},
+  "float": {}
+  },
+  "javascript": {
+  "functions": {},
+  "objects": {},
+  "scope": {},
+  "events": {},
+  "hoisting": {},
+  "strict_mode": {},
+  "JSON": {}
+  }
+}
