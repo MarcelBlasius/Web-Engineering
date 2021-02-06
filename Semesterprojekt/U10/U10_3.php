@@ -14,7 +14,7 @@
 </div>
 
     <div class=main> 
-    <h1>Login</h1>
+    <h1>Login fuer WWW-Navigator</h1>
 <form method="post">
     <fieldset>
         <legend>Einloggen</legend>
