@@ -1,0 +1,12 @@
+{ 
+    "html": {
+      "name": "HTML"
+    },
+    "css": {
+      "name": "CSS"
+    },
+    "javascript": {
+        "name": "Javascript"
+    }
+}
+  
