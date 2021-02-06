@@ -1,12 +1,18 @@
 <!doctype html>
-<h1> WWW-Navigator mit PHP</h1>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../styles/indexStyle.css" rel="stylesheet" type="text/css">
 <style>
     textarea { margin: 1rem; display: block; width: 80vw; height: 20vh; }
     input { margin: 1rem; }
 </style>
+<div class="header">
+<script src="../structure/getHeader.js"></script>
+</div>
+<div class="main">
+<h1> WWW-Navigator mit PHP</h1>
 <form method="post">
     <fieldset>
-        <legend>Select content area and add a new text:</legend>
+        <legend>Thema und Unterthema auswaehlen um einen Text einzusehen und zu veraendern:</legend>
         <select name="top_header">
             <option value="html">HTML</option>
             <option value="css">CSS</option>
@@ -18,7 +24,7 @@
         <input type="submit" value="Submit">
     </fieldset>
 </form>
-
+</div>
 <?PHP
 $file = './data.json';
 $contents = file_get_contents( $file );
@@ -70,3 +76,6 @@ if ( isset($_POST[ 'top_header' ]) && isset($_POST[ 'sub_header' ]) && isset($_P
         }
 }
 ?>
+    <div class="footer">
+    <script src="../structure/getFooter.js"></script>
+  </div>
