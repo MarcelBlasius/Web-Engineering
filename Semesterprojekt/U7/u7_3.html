@@ -68,7 +68,7 @@ computeButton.addEventListener("click", () =>{
   const abhInput = document.getElementsByClassName("abhInput");
   for(const abhaengigkeit of abhInput ){
     if(abhaengigkeit.value != ""){
-    const format = abhaengigkeit.value.split(",");
+    const format = abhaengigkeit.value.replace(" ", "").split(",");
     abh.push(format);
     }
   }
