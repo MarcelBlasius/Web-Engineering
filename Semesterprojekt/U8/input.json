@@ -1,5 +1,9 @@
 {
   "html": {
+    "elements":{
+      "content": "An HTML element is defined by a start tag, some content, and an end tag.",
+      "references": ["https://www.w3schools.com/html/html_elements.asp"]
+    },
     "headings": {
       "content": "Die Überschriftenelemente bestehen aus sechs verschiedenen Leveln. <h1> ist die Überschrift mit der höchsten Gewichtung und <h6> mit der kleinsten. Ein Überschriften-Element beschreibt das Thema des Bereiches, welcher der Überschrift folgt. Überschriften können auch verwendet werden, um ein Inhaltsverzeichnis für ein Dokument automatisch zu erstellen.",
       "references": ["https://developer.mozilla.org/de/docs/Web/HTML/Element/h1-h6"]
@@ -7,6 +11,10 @@
     "paragraph": {
       "content": "Das <p>-Element erzeugt einen Absatz, den zusammenhängenden Abschnitt eines längeren Textes. In HTML kann <p> jedoch für jedwede Art von zu gruppierendem, zusammenhängendem Inhalt genutzt werden, zum Beispiel Bilder oder Formularfelder.",
       "references": ["https://developer.mozilla.org/de/docs/Web/HTML/Element/p"]
+    },
+    "forms":{
+      "content":"An HTML form is used to collect user input. The user input is most often sent to a server for processing.",
+      "references": ["https://www.w3schools.com/html/html_forms.asp"]
     }
   },
   "css": {
@@ -17,6 +25,12 @@
     "colors": {
       "content": "Der CSS Datentyp Color beschreibt eine Farbe im sRGB Farbraum. Eine Farbe kann auf eine von drei Arten beschrieben werden: Schlüsselworte, rgb und rgba, hsl und hsla. ...",
       "references": ["https://developer.mozilla.org/de/docs/Web/CSS/Farben"]
+    },
+    "display-property": {
+      "content": "The display property specifies if/how an element is displayed. Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.",
+      "references": ["https://www.w3schools.com/css/css_display_visibility.asp"]
+      
+      
     }
   },
   "javascript": {
@@ -27,6 +41,13 @@
     "object": {
       "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
       "references": ["https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"]
+    }
+  },
+
+  "vue.js" : {
+    "binding": {
+      "content":  "When a Vue object is bound to an HTML element, the HTML element will change when the Vue object changes",
+      "references": ["https://www.w3schools.com/whatis/whatis_vue.asp"]
     }
   }
 }
