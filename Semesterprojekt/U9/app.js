@@ -1,4 +1,4 @@
-import Textinput from "./textinput.mjs"
+import Textinput from "./textinput.js"
 
 new Vue({
     el: "#app",

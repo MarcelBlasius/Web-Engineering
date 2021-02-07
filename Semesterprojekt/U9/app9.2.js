@@ -1,4 +1,4 @@
-import Menue from "./menue.mjs"
+import Menue from "./menue.js"
 
 new Vue({
     el: "#app",
