@@ -1,8 +1,0 @@
-{
-	"objects": {
-		"html": {"name": "HTML"},
-		"css": {"name": "CSS"},
-		"javascript": {"name": "JavaScript"},
-		"Vue": {"name": "Vue"}
-		}
-}
