@@ -1,3 +1,4 @@
+<!-- angelehnt an den Code Vorlesung 9 PHP !-->
 <!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="../styles/indexStyle.css" rel="stylesheet" type="text/css">
