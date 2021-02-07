@@ -32,7 +32,7 @@ img{
         const addf = x => y => x + y;
       </script>
 
-      <p>Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist.</p>
+      <p>Schreiben Sie eine Funktion applyf(), die aus einer binaeren Funktion wie add(x,y) eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binaere Multiplikation ist.</p>
       <img src="6_1_applyf.png" alt="applyf Funktion Funktional">
       <hr>
       <script>
@@ -40,7 +40,7 @@ img{
         const applyf = x => y => z => x(y,z);
       </script>
 
-      <p>Schreiben Sie eine Funktion curry() (von Currying), die eine binäre Funktion und ein Argument nimmt, um daraus eine Funktion zu erzeugen, die ein zweites Argument entgegen nimmt, z.B. add3 = curry(add, 3);add3(4) ergibt 7. curry(mul, 5)(6) ergibt 30.</p>
+      <p>Schreiben Sie eine Funktion curry() (von Currying), die eine binaere Funktion und ein Argument nimmt, um daraus eine Funktion zu erzeugen, die ein zweites Argument entgegen nimmt, z.B. add3 = curry(add, 3);add3(4) ergibt 7. curry(mul, 5)(6) ergibt 30.</p>
       <img src="6_1_curry.png" alt="Currying Funktion Funktional">
       <hr>
       <script>
@@ -51,7 +51,7 @@ img{
         }
       </script>
       
-      <p>Erzeugen Sie die inc-Funktion mit Hilfe einer der Funktionen addf, applyf und curry aus den letzten Aufgaben, ohne die Funktion inc() selbst zu implementieren. (inc(x) soll immer x + 1 ergeben und lässt sich natürlich auch direkt implementieren. Das ist aber hier nicht die Aufgabe.) Vielleicht schaffen Sie es auch, drei Varianten der inc()-Implementierung zu schreiben?</p>
+      <p>Erzeugen Sie die inc-Funktion mit Hilfe einer der Funktionen addf, applyf und curry aus den letzten Aufgaben, ohne die Funktion inc() selbst zu implementieren. (inc(x) soll immer x + 1 ergeben und laesst sich natuerlich auch direkt implementieren. Das ist aber hier nicht die Aufgabe.) Vielleicht schaffen Sie es auch, drei Varianten der inc()-Implementierung zu schreiben?</p>
       <img src="6_1_Inc.png" alt="Increment Funktion Funktional">
       <hr>
       <script>
@@ -61,7 +61,7 @@ img{
         const incWithCurry = x=> curry(add, x)(1);
       </script>
 
-      <p>Schreiben Sie eine Funktion methodize(), die eine binäre Funktion (z.B. add, mul) in eine unäre Methode verwandelt. Nach Number.prototype.add = methodize(add); soll (3).add(4) genau 7 ergeben.</p>
+      <p>Schreiben Sie eine Funktion methodize(), die eine binaere Funktion (z.B. add, mul) in eine unaere Methode verwandelt. Nach Number.prototype.add = methodize(add); soll (3).add(4) genau 7 ergeben.</p>
       <img src="6_1_methodize.png" alt="Methodize Funktion Funktional">
       <hr>
       <script>
@@ -72,11 +72,11 @@ img{
     }
       </script>
 
-      <p>Schreiben Sie eine Funktion demethodize(), die eine unäre Methode (z.B. add, mul) in eine binäre Funktion umwandelt. demethodize (Number.prototype.add)(5, 6) soll 11 ergeben.</p>
+      <p>Schreiben Sie eine Funktion demethodize(), die eine unaere Methode (z.B. add, mul) in eine binaere Funktion umwandelt. demethodize (Number.prototype.add)(5, 6) soll 11 ergeben.</p>
       <img src="6_1_demethodize.png" alt="Demethodize Funtion">
       <hr>
       <script>
-        //Mithilfe der Lösungen gelöst: https://kaul.inf.h-brs.de/we/#app-content-7-2
+        //Mithilfe der Loesungen geloest: https://kaul.inf.h-brs.de/we/#app-content-7-2
         function demethodize(f){
           return (x,y) => {
             return f.call(x,y);
@@ -85,7 +85,7 @@ img{
 
       </script>
 
-      <p>Schreiben Sie eine Funktion twice(), die eine binäre Funktion in eine unäre Funktion umwandelt, die den einen Parameter zweimal weiter reicht. Z.B. var double = twice(add); double(11) soll 22 ergeben; var square = twice(mul); square(11) soll mul(11,11) === 121 ergeben.</p>
+      <p>Schreiben Sie eine Funktion twice(), die eine binaere Funktion in eine unaere Funktion umwandelt, die den einen Parameter zweimal weiter reicht. Z.B. var double = twice(add); double(11) soll 22 ergeben; var square = twice(mul); square(11) soll mul(11,11) === 121 ergeben.</p>
       <img src="6_1_twice.png" alt="Twice Funktion Funktional">
       <hr>
       <script>
@@ -95,7 +95,7 @@ img{
         const square = twice(mul);
       </script>
 
-      <p>Schreiben Sie eine Funktion composeu(), die zwei unäre Funktionen in eine einzelne unäre Funktion transformiert, die beide nacheinander aufruft, z.B. soll composeu(double, square)(3) genau 36 ergeben.</p>
+      <p>Schreiben Sie eine Funktion composeu(), die zwei unaere Funktionen in eine einzelne unaere Funktion transformiert, die beide nacheinander aufruft, z.B. soll composeu(double, square)(3) genau 36 ergeben.</p>
       <img src="6_1_composeu.png" alt="Composeu Funktion Funktional">
       <hr>
       <script>
@@ -105,11 +105,11 @@ img{
         };
       </script>
       
-      <p>Schreiben Sie eine Funktion composeb(), die zwei binäre Funktionen in eine einzelne Funktion transformiert, die beide nacheinander aufruft, z.B. composeb(add, mul)(2, 3, 5) soll 25 ergeben.</p>
+      <p>Schreiben Sie eine Funktion composeb(), die zwei binaere Funktionen in eine einzelne Funktion transformiert, die beide nacheinander aufruft, z.B. composeb(add, mul)(2, 3, 5) soll 25 ergeben.</p>
       <img src="6_1_composeb.png" alt="Composeb Funktion">
       <hr>
       <script>
-        //Mithilfe der Lösungen gelöst: https://kaul.inf.h-brs.de/we/#app-content-7-2
+        //Mithilfe der Loesungen geloest: https://kaul.inf.h-brs.de/we/#app-content-7-2
         function composeb(f,g){
           return (...args) => {
             return g(f(args[0], args[1], args[2]));
@@ -131,7 +131,7 @@ img{
         }
       </script>
 
-      <p>Schreiben Sie eine Fabrik-Funktion counterf(), die zwei Funktionen inc() und dec() berechnet, die einen Zähler hoch- und herunterzählen. Z.B. counter = counterf(10); Dann soll counter.inc() 11 und counter.dec() wieder 10 ergeben.</p>
+      <p>Schreiben Sie eine Fabrik-Funktion counterf(), die zwei Funktionen inc() und dec() berechnet, die einen Zaehler hoch- und herunterzaehlen. Z.B. counter = counterf(10); Dann soll counter.inc() 11 und counter.dec() wieder 10 ergeben.</p>
       <img src="6_1_counterf.png" alt="Counterf Funktion Funktional">
       <hr>
       <script>
@@ -143,9 +143,9 @@ img{
           }
       };
       </script>
-      <p>Schreiben Sie eine rücknehmbare Funktion revocable(), die als Parameter eine Funktion nimmt und diese bei Aufruf ausführt. Sobald die Funktion aber mit revoke() zurück genommen wurde, führt ein erneuter Aufruf zu einem Fehler. Z.B.
+      <p>Schreiben Sie eine ruecknehmbare Funktion revocable(), die als Parameter eine Funktion nimmt und diese bei Aufruf ausfuehrt. Sobald die Funktion aber mit revoke() zurueck genommen wurde, fuehrt ein erneuter Aufruf zu einem Fehler. Z.B.
           <br> temp = revocable(alert); <br>
-              temp.invoke(7); // führt zu alert(7); <br>
+              temp.invoke(7); // fuehrt zu alert(7); <br>
               temp.revoke();<br>
               temp.invoke(8); // Fehlerabbruch!
       </p>

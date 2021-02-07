@@ -14,7 +14,7 @@
 
     <div class=main> 
       <h1> DeepCopy </h1>
-      <p>Schreiben Sie eine rekursive Funktion deepCopy( struct ) als ES6-Ausdruck, so dass beliebig geschachtelte Arrays und Objekte struct tiefenkopiert werden können. Verwenden Sie zu diesem Zweck den konditionalen ternären Operator, Array.map(), Object.fromEntries() und Object.entries(). Verwenden Sie dabei nur Arrow Functions und Ausdrücke, keine Anweisungen, keine Blöcke. Verwenden Sie nicht die JSON-Methoden.</p>
+      <p>Schreiben Sie eine rekursive Funktion deepCopy( struct ) als ES6-Ausdruck, so dass beliebig geschachtelte Arrays und Objekte struct tiefenkopiert werden koennen. Verwenden Sie zu diesem Zweck den konditionalen ternaeren Operator, Array.map(), Object.fromEntries() und Object.entries(). Verwenden Sie dabei nur Arrow Functions und Ausdruecke, keine Anweisungen, keine Bloecke. Verwenden Sie nicht die JSON-Methoden.</p>
       Implementierung: <br>
       <img src="5_5_deepCopy.png" alt="DeepCopy Implementierung">
       <br>
@@ -22,7 +22,7 @@
       <img src="5_5_deepCopy_tests.png" alt="DeepCopy Tests">
 
       <script>
-        //Gelöst mithilfe der Lösungen: https://kaul.inf.h-brs.de/we/#app-content-6-2
+        //Geloest mithilfe der Loesungen: https://kaul.inf.h-brs.de/we/#app-content-6-2
 const deepCopy = (struct) => 
     Array.isArray(struct) ? struct.map(x => deepCopy(x)) 
                         : typeof struct ==="object"

@@ -102,8 +102,8 @@
 			//tests Vorrang Klasse
 			console.log("Starte Tests");
 			// :: Arrange ::
-			var undertest = new Vorrang([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]]);
-			var expected = [["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]];
+			var undertest = new Vorrang([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "pruefen"]]);
+			var expected = [["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "pruefen"]];
 			
 			// :: Act ::
 			var actual = undertest.abhaengigkeiten;
@@ -118,7 +118,7 @@
 			}
 			
 			// :: Arrange ::
-			expected = topsort([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]]);
+			expected = topsort([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "pruefen"]]);
 			
 			// :: Act ::
 			actual = undertest.topologischeSortierung;
@@ -130,7 +130,7 @@
 			}
 			
 			// Iterator Test for Vorrang class
-			expected = ["schlafen", "essen", "studieren", "prüfen"];
+			expected = ["schlafen", "essen", "studieren", "pruefen"];
 			
 			var i = 0;
 			for(const tmp of undertest){

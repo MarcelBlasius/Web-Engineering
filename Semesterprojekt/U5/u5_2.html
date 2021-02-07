@@ -14,7 +14,7 @@
 		</div>
     <div class=main> 
 		<h1> Topologische Iterierbarkeit </h1>
-		<p>Stellen Sie bei Ihrer Klasse aus der letzten Aufgabe die topologische Iterierbarkeit her (zunächst über das Iterationsprotokoll, ohne Generator, ohne yield).</p>
+		<p>Stellen Sie bei Ihrer Klasse aus der letzten Aufgabe die topologische Iterierbarkeit her (zunaechst ueber das Iterationsprotokoll, ohne Generator, ohne yield).</p>
 		Implementierung: <br>
 		<img src="5_2_topIterierbarkeit.png" alt="Topoligische Iterierbarkeit Implementierung">
 		<br>
@@ -108,8 +108,8 @@
 		//tests Vorrang Klasse
 		console.log("Starte Tests");
 		// :: Arrange ::
-		var undertest = new Vorrang([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]]);
-		var expected = [["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]];
+		var undertest = new Vorrang([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "pruefen"]]);
+		var expected = [["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "pruefen"]];
 		
 		// :: Act ::
 		var actual = undertest.abhaengigkeiten;
@@ -124,7 +124,7 @@
 		}
 		
 		// :: Arrange ::
-		expected = topsort([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]]);
+		expected = topsort([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "pruefen"]]);
 		
 		// :: Act ::
 		actual = undertest.topologischeSortierung;
@@ -136,7 +136,7 @@
 		}
 		
 		// Iterator Test for Vorrang class
-		expected = ["schlafen", "essen", "studieren", "prüfen"];
+		expected = ["schlafen", "essen", "studieren", "pruefen"];
 		
 		var i = 0;
 		for(const tmp of undertest){

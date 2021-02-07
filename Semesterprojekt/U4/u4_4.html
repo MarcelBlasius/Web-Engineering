@@ -16,7 +16,7 @@
 
 <div class="main">
 	<h1> TopSort </h1>
-  <p>In jedem Projekt fallen Aufgaben (Tasks) an. Zwischen den Aufgaben gibt es paarweise Abhängigkeiten. Z.B. kann Task2 von Task1 abhängen, d.h. erst muss Task1 fertig sein, bevor Task2 starten kann, weil es dessen Ergebnisse benötigt. Tasks können auch unabhängig voneinander sein und parallel ablaufen. In JavaScript können Sie die Abhängigkeiten in Arrays codieren, z.B. kann man bei [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ] nicht prüfen, ohne vorher gegessen zu haben. Transitive Abhängigkeiten müssen also berücksichtigt werden.
+  <p>In jedem Projekt fallen Aufgaben (Tasks) an. Zwischen den Aufgaben gibt es paarweise Abhaengigkeiten. Z.B. kann Task2 von Task1 abhaengen, d.h. erst muss Task1 fertig sein, bevor Task2 starten kann, weil es dessen Ergebnisse benoetigt. Tasks koennen auch unabhaengig voneinander sein und parallel ablaufen. In JavaScript koennen Sie die Abhaengigkeiten in Arrays codieren, z.B. kann man bei [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "pruefen"] ] nicht pruefen, ohne vorher gegessen zu haben. Transitive Abhaengigkeiten muessen also beruecksichtigt werden.
   </p>
   <p>Schreiben Sie in JavaScript eine Funktion topsort(), die eine topologische Sortierung berechnet.</p>
   <p>Achten Sie auf Performanz. Berechnen Sie die topologische Sortierung in linearer Zeit (Average Case).:</p>
@@ -82,12 +82,12 @@ function topsort(abhaengigkeitenArray){
 	return topsort;
 }
 
-var abhaengigkeitenArray = [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ];
+var abhaengigkeitenArray = [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "pruefen"] ];
 
 
 //Test getAllAttributes -> should return all Attributes
 // :: Arrange ::
-var expected = ["schlafen", "studieren", "essen", "prüfen"]
+var expected = ["schlafen", "studieren", "essen", "pruefen"]
 
 // :: Act ::
 var actual = getAllAttributes(abhaengigkeitenArray);
@@ -105,8 +105,8 @@ var expected1 = ["studieren"];
 var expected2 = [];
 
 // :: Act ::
-var actual1 = getAbhaengigkeiten("prüfen", abhaengigkeitenArray);
-var actual2 = getAbhaengigkeiten("prüfen", abhaengigkeitenArray, "studieren");
+var actual1 = getAbhaengigkeiten("pruefen", abhaengigkeitenArray);
+var actual2 = getAbhaengigkeiten("pruefen", abhaengigkeitenArray, "studieren");
 
 // :: Assert ::
 console.assert(expected1.length === actual1.length, "ERROR! expected: " + expected + " actual: " + actual);
@@ -122,7 +122,7 @@ console.assert(expected2[i] === actual2[i], "ERROR! expected: " + expected + " a
 
 //Test topsort
 // :: Arrange ::
-expected = ["schlafen", "essen", "studieren", "prüfen"];
+expected = ["schlafen", "essen", "studieren", "pruefen"];
 
 // :: Act ::
 actual = topsort(abhaengigkeitenArray);
@@ -134,7 +134,7 @@ console.assert(expected[i] === actual[i], "ERROR! expected: " + expected + " act
 }
 
 
-//test unlösbar
+//test unloesbar
 // :: Arrange ::
 expected = "There is no topSort";
 var nichtSortierBar = [[1,2],[2,1],[3,4]];
@@ -145,7 +145,7 @@ actual = topsort(nichtSortierBar);
 // :: Assert ::
 console.assert(expected === actual, "ERROR! expected: " + expected + " actual: " + actual);
 
-console.log("Abhängigkeiten:");
+console.log("Abhaengigkeiten:");
 console.log(abhaengigkeitenArray);
 console.log("topSort:");
 console.log(topsort(abhaengigkeitenArray));
